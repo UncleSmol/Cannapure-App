@@ -6,24 +6,22 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Configure compression
+// Configure compression with parsed integer level
 app.use(
-	
-		pression({,
-			
-level: process.env.COMPRESSION_LEVEL || 6,
+	compression({
+		level: parseInt(process.env.COMPRESSION_LEVEL) || 6,
 	})
 );
 
 // Serve static files
 app.use(express.static(__dirname));
-""
-	asic route""
+
+// Basic route
 app.get("/", (req, res) => {
 	res.sendFile(path.join(__dirname, "index.html"));
 });
 
-	tart server
+// Start server
 app.listen(PORT, () => {
 	console.log(`Server running on port ${PORT} in ${process.env.NODE_ENV} mode`);
 });
