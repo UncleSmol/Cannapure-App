@@ -8,10 +8,27 @@
 		"dev": "nodemon server.js"
 	},
 	"keywords": [
-		"cannabis",
-		"e-commerce",
-		"web-app"
+		"cannapure",
+		"cannabis-store",
+		"marijuana",
+		"dispensary",
+		"weed-shop",
+		"zol",
+		"420",
+		"cloud-9",
+		"high"
 	],
 	"author": "",
-	"license": "ISC"
+	"license": "ISC",
+	"dependencies": {
+		"compression": "^1.7.4",
+		"dotenv": "^16.3.1",
+		"express": "^4.18.2"
+	},
+	"devDependencies": {
+		"nodemon": "^3.0.2"
+	},
+	"engines": {
+		"node": ">=18.0.0"
+	}
 }
