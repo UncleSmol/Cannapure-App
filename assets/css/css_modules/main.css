@@ -1,0 +1,39 @@
+/* Main Container */
+.main-content {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	transform: translateY(60px); /* Accounts for header height */
+	overflow: scroll;
+	padding: 10px 20px;
+	margin-bottom: 60px;
+	background: url("/assets/img/clipboard-image-3.png") center/cover no-repeat
+		#ffffff;
+}
+
+/* Hide scrollbar while maintaining functionality */
+.main-content {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+.main-content::-webkit-scrollbar {
+	display: none; /* Chrome, Safari and Opera */
+}
+
+/* Base body styles */
+body {
+	width: 100svw;
+	height: 100svh;
+	position: relative;
+}
+
+/* Additional resets that are commonly needed */
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-family: "Tilt Neon", serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

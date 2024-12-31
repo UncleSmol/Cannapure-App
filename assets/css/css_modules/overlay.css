@@ -1,0 +1,14 @@
+/* Overlay Component */
+.overlay {
+	width: 100svw;
+	height: 100svh;
+	position: absolute;
+	color: var(--bs-gray-700);
+	background: rgba(73, 80, 87, 0.72);
+	z-index: 1000; /* Adding z-index to ensure overlay appears above other content */
+}
+
+/* Utility class (if not already defined) */
+.hidden {
+	display: none;
+}

@@ -1,0 +1,239 @@
+/* Header Component */
+.site-header {
+	height: 60px;
+	width: 100%;
+	padding: 0 20px;
+	position: fixed;
+	background: #fff6f6;
+	box-shadow: 0px 0px 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* Logo Section */
+.site-header__logo {
+	width: auto;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: rgb(44, 44, 44);
+}
+
+.site-header__title {
+	color: var(--bs-gray-700);
+	font-size: 20px;
+	margin: 0;
+	font-family: "Tilt Neon", serif;
+}
+
+.site-header__title a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Navigation */
+.site-header__nav {
+	width: 400px;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.site-header__nav-item {
+	font-family: "Tilt Neon", serif;
+	width: 100%;
+	display: block;
+	text-align: center;
+	text-wrap: nowrap;
+}
+
+.site-header__nav-item a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+	width: 40px;
+	height: 40px;
+	border-width: 2px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.hamburger-menu__line {
+	width: 35px;
+	height: 5px;
+	background: #000000;
+	border-radius: 20px;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+	width: 250px;
+	height: 100svh;
+	position: absolute;
+	min-width: 200px;
+	max-width: 300px;
+	padding: 10px;
+	background: #fff6f6;
+	box-shadow: -5px 5px 10px;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+
+.mobile-nav__list {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: start;
+}
+
+.mobile-nav__logo {
+	height: 230px;
+}
+
+.mobile-nav__logo img {
+	width: 100%;
+	height: 100%;
+}
+
+/* Utility Classes */
+.hidden {
+	display: none;
+}
+
+/* Header Responsive Styles */
+@media (max-width: 576px) {
+	.site-header__nav {
+		display: none;
+	}
+
+	.hamburger-menu {
+		display: flex;
+	}
+
+	.mobile-nav {
+		display: none;
+		right: -100%;
+		opacity: 0;
+		transition: all 0.3s ease-in-out;
+	}
+
+	.mobile-nav.menu-active {
+		display: block;
+		right: 0;
+		opacity: 1;
+		transform: translateY(60px);
+	}
+}
+
+@media (min-width: 576px) {
+	.hamburger-menu,
+	.mobile-nav {
+		display: none;
+	}
+}
+
+/* Hamburger Menu Animation */
+.hamburger-menu__line {
+	transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu__line.ham-active:first-child {
+	transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger-menu__line.ham-active:nth-child(2) {
+	opacity: 0;
+}
+
+.hamburger-menu__line.ham-active:last-child {
+	transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Navigation Items Hover Effect */
+.site-header__nav-item {
+	transition: all 0.7s ease-in-out;
+}
+
+.site-header__nav-item:hover {
+	color: red;
+	transform: scale(1.1);
+	transition: all 0.3s ease-in-out;
+}
+
+/* Overlay Styles */
+.overlay {
+	bottom: 0;
+	left: 0;
+	z-index: 9;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.overlay:not(.hidden) {
+	opacity: 1;
+}
+
+/* Mobile Navigation Icons */
+.mobile-nav__icon {
+	width: 25px;
+	height: 25px;
+	margin-right: 20px;
+}
+
+.mobile-nav__icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+/* Z-index Management */
+.site-header,
+.mobile-nav {
+	z-index: 100;
+}
+
+.mobile-nav__item {
+	width: 100%;
+	height: 35px;
+	display: flex;
+	align-items: center;
+}
+
+.mobile-nav__icon-wrapper {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.mobile-nav__icon {
+	width: 25px;
+	height: 25px;
+	margin-right: 20px;
+}
+
+.mobile-nav__text {
+	font-family: "Tilt Neon", serif;
+	text-decoration: none;
+	color: inherit;
+}
+
+.mobile-nav__icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
