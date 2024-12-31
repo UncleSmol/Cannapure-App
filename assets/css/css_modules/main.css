@@ -7,7 +7,7 @@
 	overflow: scroll;
 	padding: 10px 20px;
 	margin-bottom: 60px;
-	background: url("/assets/img/clipboard-image-3.png") center/cover no-repeat
+	background-image: url("./assets/img/clipboard-image-3.png") center/cover no-repeat
 		#ffffff;
 }
 
