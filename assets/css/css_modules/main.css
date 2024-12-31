@@ -7,8 +7,9 @@
 	overflow: scroll;
 	padding: 10px 20px;
 	margin-bottom: 60px;
-	background-image: url("./assets/img/clipboard-image-3.png") center/cover no-repeat
-		#ffffff;
+	background-image: url('https://cdn.pixabay.com/photo/2016/10/17/14/31/background-1747781_1280.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 /* Hide scrollbar while maintaining functionality */
