@@ -199,6 +199,7 @@
 	margin: 0;
 	padding: 1px 5px;
 	line-height: 1;
+	height: 40px;
 }
 
 /* Indicator Bar */
@@ -338,4 +339,9 @@
 #labPage.section {
 	width: 100%;
 	height: auto;
+}
+
+/*Setting bottom margin on edibles tab so get it into viewport*/
+#edibles{
+	margin-bottom: 60px;
 }

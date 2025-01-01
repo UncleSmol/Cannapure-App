@@ -1,3 +1,226 @@
+async function fetchWeeklySpecials() {
+	try {
+		console.log("Fetching weekly specials..."); // Debug log
+		const response = await fetch("/api/weekly-specials");
+		const specials = await response.json();
+		console.log("Received data:", specials); // Debug log
+
+		const container = document.getElementById("weeklySpecialsWrapper");
+
+		if (!specials || specials.length === 0) {
+			console.log("No specials found"); // Debug log
+			container.innerHTML =
+				'<p class="no-specials">No weekly specials available at this time.</p>';
+			return;
+		}
+
+		container.innerHTML = specials
+			.map(
+				(special) => `
+            <div class="strain-card">
+                <div class="strain-card__image-holder">
+                    <img src="${
+											special.image_url || "./assets/img/cannipure-logo.png"
+										}" 
+                         alt="${special.strain_name}" 
+                         loading="lazy" />
+                </div>
+
+                <div class="strain-card__name-holder">
+                    <p class="strain-card__name">${
+											special.strain_name || "Unknown Strain"
+										}</p>
+                    <p class="strain-card__type">${
+											special.strain_type || "Unknown Type"
+										}</p>
+                </div>
+
+                <div class="strain-card__category-holder">
+                    <p class="strain-card__category">${
+											special.category || "Uncategorized"
+										}</p>
+                </div>
+
+                <div class="strain-card__price-holder">
+                    <p class="strain-card__price">R${Number(
+											special.price || 0
+										).toFixed(2)}</p>
+                    <p class="strain-card__measurement">${
+											special.measurement_unit || "/1g"
+										}</p>
+                </div>
+
+                <div class="strain-card__description-holder">
+                    <p class="strain-card__description">${
+											special.description || "No description available"
+										}</p>
+                </div>
+
+                <div class="strain-card__indicator"></div>
+            </div>
+        `
+			)
+			.join("");
+
+		console.log("Weekly specials rendered successfully"); // Debug log
+	} catch (error) {
+		console.error("Error fetching weekly specials:", error);
+		const container = document.getElementById("weeklySpecialsWrapper");
+		container.innerHTML =
+			'<p class="error-message">Unable to load weekly specials. Please try again later.</p>';
+	}
+}
+
+async function fetchNormalStrains() {
+	try {
+		console.log("Fetching normal strains...");
+		const response = await fetch("/api/normal-strains");
+		const strains = await response.json();
+		console.log("Received normal strains data:", strains);
+
+		const container = document.querySelector(
+			"#normalStrains .category-section__card-holder"
+		);
+
+		if (!strains || strains.length === 0) {
+			console.log("No normal strains found");
+			container.innerHTML =
+				'<p class="no-strains">No normal strains available at this time.</p>';
+			return;
+		}
+
+		container.innerHTML = strains
+			.map(
+				(strain) => `
+            <div class="strain-card">
+                <div class="strain-card__image-holder">
+                    <img src="${
+											strain.image_url || "./assets/img/cannipure-logo.png"
+										}" 
+                         alt="${strain.strain_name}" 
+                         loading="lazy" />
+                </div>
+
+                <div class="strain-card__name-holder">
+                    <p class="strain-card__name">${
+											strain.strain_name || "Unknown Strain"
+										}</p>
+                    <p class="strain-card__type">${
+											strain.strain_type || "Unknown Type"
+										}</p>
+                </div>
+
+                <div class="strain-card__category-holder">
+                    <p class="strain-card__category">NORMAL STRAIN</p>
+                </div>
+
+                <div class="strain-card__price-holder">
+                    <p class="strain-card__price">R${Number(
+											strain.price || 0
+										).toFixed(2)}</p>
+                    <p class="strain-card__measurement">${
+											strain.measurement_unit || "/1g"
+										}</p>
+                </div>
+
+                <div class="strain-card__description-holder">
+                    <p class="strain-card__description">${
+											strain.description || "No description available"
+										}</p>
+                </div>
+
+                <div class="strain-card__indicator"></div>
+            </div>
+        `
+			)
+			.join("");
+
+		console.log("Normal strains rendered successfully");
+	} catch (error) {
+		console.error("Error fetching normal strains:", error);
+		const container = document.querySelector(
+			"#normalStrains .category-section__card-holder"
+		);
+		container.innerHTML =
+			'<p class="error-message">Unable to load normal strains. Please try again later.</p>';
+	}
+}
+
+async function fetchOutdoorStrains() {
+	try {
+		console.log("Fetching outdoor strains...");
+		const response = await fetch("/api/outdoor-strains");
+		const strains = await response.json();
+		console.log("Received outdoor strains data:", strains);
+
+		const container = document.querySelector(
+			"#outdoorStrains .category-section__card-holder"
+		);
+
+		if (!strains || strains.length === 0) {
+			console.log("No outdoor strains found");
+			container.innerHTML =
+				'<p class="no-strains">No outdoor strains available at this time.</p>';
+			return;
+		}
+
+		container.innerHTML = strains
+			.map(
+				(strain) => `
+            <div class="strain-card">
+                <div class="strain-card__image-holder">
+                    <img src="${
+											strain.image_url || "./assets/img/cannipure-logo.png"
+										}" 
+                         alt="${strain.strain_name}" 
+                         loading="lazy" />
+                </div>
+
+                <div class="strain-card__name-holder">
+                    <p class="strain-card__name">${
+											strain.strain_name || "Unknown Strain"
+										}</p>
+                    <p class="strain-card__type">${
+											strain.strain_type || "Unknown Type"
+										}</p>
+                </div>
+
+                <div class="strain-card__category-holder">
+                    <p class="strain-card__category">OUTDOOR</p>
+                </div>
+
+                <div class="strain-card__price-holder">
+                    <p class="strain-card__price">R${Number(
+											strain.price || 0
+										).toFixed(2)}</p>
+                    <p class="strain-card__measurement">${
+											strain.measurement_unit || "/1g"
+										}</p>
+                </div>
+
+                <div class="strain-card__description-holder">
+                    <p class="strain-card__description">${
+											strain.description || "No description available"
+										}</p>
+                </div>
+
+                <div class="strain-card__indicator"></div>
+            </div>
+        `
+			)
+			.join("");
+
+		console.log("Outdoor strains rendered successfully");
+	} catch (error) {
+		console.error("Error fetching outdoor strains:", error);
+		const container = document.querySelector(
+			"#outdoorStrains .category-section__card-holder"
+		);
+		container.innerHTML =
+			'<p class="error-message">Unable to load outdoor strains. Please try again later.</p>';
+	}
+}
+
 // DOM Elements
 const elements = {
 	hamburgerMenu: document.getElementById("hamburgerMenu"),
@@ -40,14 +263,12 @@ const toggleMenuSystem = (isOpen) => {
 
 // Page Navigation
 const showPage = (pageId) => {
-	// Hide all pages except lab
 	Object.entries(elements.pages).forEach(([key, page]) => {
 		if (page) {
 			toggleClass(page, "hidden", key !== "lab");
 		}
 	});
 
-	// If a specific page is selected and it's not lab, show it instead
 	if (pageId !== "labPage") {
 		const selectedPage = document.getElementById(pageId);
 		if (selectedPage) {
@@ -56,12 +277,22 @@ const showPage = (pageId) => {
 		}
 	}
 
-	// Reset mobile navigation when page changes
 	toggleMenuSystem(false);
 };
 
 // Event Listeners
 document.addEventListener("DOMContentLoaded", () => {
+	console.log("Page loaded, initializing..."); // Debug log
+
+	// Initialize weekly specials
+	fetchWeeklySpecials();
+
+	// Initialize Normal Strains
+	fetchNormalStrains();
+
+	// Initialize Outdoor Strains
+	fetchOutdoorStrains();
+
 	// Mobile Menu Events
 	elements.hamburgerMenu?.addEventListener("click", () => {
 		const shouldOpen = !elements.mobileNav.classList.contains("menu-active");
@@ -108,39 +339,3 @@ document.addEventListener("DOMContentLoaded", () => {
 	const initialPage = window.location.hash.substring(1) || "labPage";
 	showPage(initialPage);
 });
-
-// In your frontend JavaScript file
-async function fetchStrains() {
-    try {
-        const response = await fetch('/api/strains');
-        const strains = await response.json();
-        
-        const container = document.getElementById('weeklySpecialsWrapper');
-        container.innerHTML = strains.map(strain => `
-            <div class="strain-card">
-                <div class="strain-card__image-holder">
-                    <img src="${strain.image_url}" alt="${strain.strain_name}" loading="lazy" />
-                </div>
-                <div class="strain-card__name-holder">
-                    <p class="strain-card__name">${strain.strain_name}</p>
-                    <p class="strain-card__type">${strain.strain_type}</p>
-                </div>
-                <div class="strain-card__category-holder">
-                    <p class="strain-card__category">${strain.category}</p>
-                </div>
-                <div class="strain-card__price-holder">
-                    <p class="strain-card__price">R${strain.price.toFixed(2)}</p>
-                    <p class="strain-card__measurement">${strain.measurement_unit}</p>
-                </div>
-                <div class="strain-card__description-holder">
-                    <p class="strain-card__description">${strain.description}</p>
-                </div>
-            </div>
-        `).join('');
-    } catch (error) {
-        console.error('Error fetching strains:', error);
-    }
-}
-
-// Call this when the page loads
-document.addEventListener('DOMContentLoaded', fetchStrains);
