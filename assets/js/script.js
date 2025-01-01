@@ -1,4 +1,14 @@
+// Base URL configuration
 const API_BASE_URL = window.location.origin;
+
+// Helper function for API calls
+async function fetchFromAPI(endpoint) {
+	const response = await fetch(`${API_BASE_URL}${endpoint}`);
+	if (!response.ok) {
+		throw new Error(`HTTP error! status: ${response.status}`);
+	}
+	return await response.json();
+}
 
 async function fetchWeeklySpecials() {
 	try {
