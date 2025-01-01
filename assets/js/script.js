@@ -10,6 +10,7 @@ async function fetchFromAPI(endpoint) {
 	return await response.json();
 }
 
+// Weekley Specials
 async function fetchWeeklySpecials() {
 	try {
 		console.log("Fetching weekly specials..."); // Debug log
@@ -83,6 +84,7 @@ async function fetchWeeklySpecials() {
 	}
 }
 
+// Normal Strains
 async function fetchNormalStrains() {
 	try {
 		console.log("Fetching normal strains...");
@@ -158,6 +160,7 @@ async function fetchNormalStrains() {
 	}
 }
 
+// Outdoor Strains
 async function fetchOutdoorStrains() {
 	try {
 		console.log("Fetching outdoor strains...");
@@ -233,6 +236,266 @@ async function fetchOutdoorStrains() {
 	}
 }
 
+// Greenhouse Strains
+async function fetchGreenhouseStrains() {
+    try {
+        console.log('Fetching greenhouse strains...');
+        const strains = await fetchFromAPI('/api/greenhouse-strains');
+        const container = document.querySelector('#greenhouseStrains .category-section__card-holder');
+        
+        if (!strains || strains.length === 0) {
+            container.innerHTML = '<p class="no-strains">No greenhouse strains available at this time.</p>';
+            return;
+        }
+
+        container.innerHTML = strains.map(strain => `
+            <div class="strain-card">
+                <div class="strain-card__image-holder">
+                    <img src="${strain.image_url || './assets/img/cannipure-logo.png'}" 
+                         alt="${strain.strain_name}" 
+                         loading="lazy" />
+                </div>
+                <div class="strain-card__name-holder">
+                    <p class="strain-card__name">${strain.strain_name}</p>
+                    <p class="strain-card__type">${strain.strain_type}</p>
+                </div>
+                <div class="strain-card__category-holder">
+                    <p class="strain-card__category">GREENHOUSE</p>
+                </div>
+                <div class="strain-card__price-holder">
+                    <p class="strain-card__price">R${Number(strain.price).toFixed(2)}</p>
+                    <p class="strain-card__measurement">${strain.measurement_unit}</p>
+                </div>
+                <div class="strain-card__description-holder">
+                    <p class="strain-card__description">${strain.description}</p>
+                </div>
+                <div class="strain-card__indicator"></div>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error('Error fetching greenhouse strains:', error);
+        const container = document.querySelector('#greenhouseStrains .category-section__card-holder');
+        container.innerHTML = '<p class="error-message">Unable to load greenhouse strains. Please try again later.</p>';
+    }
+}
+
+// AAA Greenhouse Strains
+async function fetchAAAGreenhouseStrains() {
+    try {
+        console.log('Fetching AAA greenhouse strains...');
+        const strains = await fetchFromAPI('/api/aaa-greenhouse-strains');
+        const container = document.querySelector('#aaaGreenhouseStrains .category-section__card-holder');
+        
+        if (!strains || strains.length === 0) {
+            container.innerHTML = '<p class="no-strains">No AAA greenhouse strains available at this time.</p>';
+            return;
+        }
+
+        container.innerHTML = strains.map(strain => `
+            <div class="strain-card">
+                <div class="strain-card__image-holder">
+                    <img src="${strain.image_url || './assets/img/cannipure-logo.png'}" 
+                         alt="${strain.strain_name}" 
+                         loading="lazy" />
+                </div>
+                <div class="strain-card__name-holder">
+                    <p class="strain-card__name">${strain.strain_name}</p>
+                    <p class="strain-card__type">${strain.strain_type}</p>
+                </div>
+                <div class="strain-card__category-holder">
+                    <p class="strain-card__category">AAA GREENHOUSE</p>
+                </div>
+                <div class="strain-card__price-holder">
+                    <p class="strain-card__price">R${Number(strain.price).toFixed(2)}</p>
+                    <p class="strain-card__measurement">${strain.measurement_unit}</p>
+                </div>
+                <div class="strain-card__description-holder">
+                    <p class="strain-card__description">${strain.description}</p>
+                </div>
+                <div class="strain-card__indicator"></div>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error('Error fetching AAA greenhouse strains:', error);
+        const container = document.querySelector('#aaaGreenhouseStrains .category-section__card-holder');
+        container.innerHTML = '<p class="error-message">Unable to load AAA greenhouse strains. Please try again later.</p>';
+    }
+}
+
+// AAA Indoor Strains
+async function fetchAAAIndoorStrains() {
+    try {
+        console.log('Fetching AAA indoor strains...');
+        const strains = await fetchFromAPI('/api/aaa-indoor-strains');
+        const container = document.querySelector('#aaaIndoorStrains .category-section__card-holder');
+        
+        if (!strains || strains.length === 0) {
+            container.innerHTML = '<p class="no-strains">No AAA indoor strains available at this time.</p>';
+            return;
+        }
+
+        container.innerHTML = strains.map(strain => `
+            <div class="strain-card">
+                <div class="strain-card__image-holder">
+                    <img src="${strain.image_url || './assets/img/cannipure-logo.png'}" 
+                         alt="${strain.strain_name}" 
+                         loading="lazy" />
+                </div>
+                <div class="strain-card__name-holder">
+                    <p class="strain-card__name">${strain.strain_name}</p>
+                    <p class="strain-card__type">${strain.strain_type}</p>
+                </div>
+                <div class="strain-card__category-holder">
+                    <p class="strain-card__category">AAA INDOOR</p>
+                </div>
+                <div class="strain-card__price-holder">
+                    <p class="strain-card__price">R${Number(strain.price).toFixed(2)}</p>
+                    <p class="strain-card__measurement">${strain.measurement_unit}</p>
+                </div>
+                <div class="strain-card__description-holder">
+                    <p class="strain-card__description">${strain.description}</p>
+                </div>
+                <div class="strain-card__indicator"></div>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error('Error fetching AAA indoor strains:', error);
+        const container = document.querySelector('#aaaIndoorStrains .category-section__card-holder');
+        container.innerHTML = '<p class="error-message">Unable to load AAA indoor strains. Please try again later.</p>';
+    }
+}
+
+// Pre-Rolled
+async function fetchPreRolled() {
+    try {
+        console.log('Fetching pre-rolled products...');
+        const products = await fetchFromAPI('/api/pre-rolled');
+        const container = document.querySelector('#preRolls .category-section__card-holder');
+        
+        if (!products || products.length === 0) {
+            container.innerHTML = '<p class="no-strains">No pre-rolled products available at this time.</p>';
+            return;
+        }
+
+        container.innerHTML = products.map(product => `
+            <div class="strain-card">
+                <div class="strain-card__image-holder">
+                    <img src="${product.image_url || './assets/img/cannipure-logo.png'}" 
+                         alt="${product.strain_name}" 
+                         loading="lazy" />
+                </div>
+                <div class="strain-card__name-holder">
+                    <p class="strain-card__name">${product.strain_name}</p>
+                    <p class="strain-card__type">${product.strain_type}</p>
+                </div>
+                <div class="strain-card__category-holder">
+                    <p class="strain-card__category">PRE-ROLLED</p>
+                </div>
+                <div class="strain-card__price-holder">
+                    <p class="strain-card__price">R${Number(product.price).toFixed(2)}</p>
+                    <p class="strain-card__measurement">${product.measurement_unit}</p>
+                </div>
+                <div class="strain-card__description-holder">
+                    <p class="strain-card__description">${product.description}</p>
+                </div>
+                <div class="strain-card__indicator"></div>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error('Error fetching pre-rolled products:', error);
+        const container = document.querySelector('#preRolls .category-section__card-holder');
+        container.innerHTML = '<p class="error-message">Unable to load pre-rolled products. Please try again later.</p>';
+    }
+}
+
+// Extracts and Vapes
+async function fetchExtractsAndVapes() {
+    try {
+        console.log('Fetching extracts and vapes...');
+        const products = await fetchFromAPI('/api/extracts-and-vapes');
+        const container = document.querySelector('#extractsAndVapes .category-section__card-holder');
+        
+        if (!products || products.length === 0) {
+            container.innerHTML = '<p class="no-strains">No extracts and vapes available at this time.</p>';
+            return;
+        }
+
+        container.innerHTML = products.map(product => `
+            <div class="strain-card">
+                <div class="strain-card__image-holder">
+                    <img src="${product.image_url || './assets/img/cannipure-logo.png'}" 
+                         alt="${product.product_name}" 
+                         loading="lazy" />
+                </div>
+                <div class="strain-card__name-holder">
+                    <p class="strain-card__name">${product.product_name}</p>
+                    <p class="strain-card__type">${product.product_type}</p>
+                </div>
+                <div class="strain-card__category-holder">
+                    <p class="strain-card__category">EXTRACTS & VAPES</p>
+                </div>
+                <div class="strain-card__price-holder">
+                    <p class="strain-card__price">R${Number(product.price).toFixed(2)}</p>
+                    <p class="strain-card__measurement">${product.measurement_unit}</p>
+                </div>
+                <div class="strain-card__description-holder">
+                    <p class="strain-card__description">${product.description}</p>
+                </div>
+                <div class="strain-card__indicator"></div>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error('Error fetching extracts and vapes:', error);
+        const container = document.querySelector('#extractsAndVapes .category-section__card-holder');
+        container.innerHTML = '<p class="error-message">Unable to load extracts and vapes. Please try again later.</p>';
+    }
+}
+
+// Edibles
+async function fetchEdibles() {
+    try {
+        console.log('Fetching edibles...');
+        const products = await fetchFromAPI('/api/edibles');
+        const container = document.querySelector('#edibles .category-section__card-holder');
+        
+        if (!products || products.length === 0) {
+            container.innerHTML = '<p class="no-strains">No edibles available at this time.</p>';
+            return;
+        }
+
+        container.innerHTML = products.map(product => `
+            <div class="strain-card">
+                <div class="strain-card__image-holder">
+                    <img src="${product.image_url || './assets/img/cannipure-logo.png'}" 
+                         alt="${product.product_name}" 
+                         loading="lazy" />
+                </div>
+                <div class="strain-card__name-holder">
+                    <p class="strain-card__name">${product.product_name}</p>
+                    <p class="strain-card__type">${product.product_type}</p>
+                </div>
+                <div class="strain-card__category-holder">
+                    <p class="strain-card__category">EDIBLES</p>
+                </div>
+                <div class="strain-card__price-holder">
+                    <p class="strain-card__price">R${Number(product.price).toFixed(2)}</p>
+                    <p class="strain-card__measurement">${product.measurement_unit}</p>
+                </div>
+                <div class="strain-card__description-holder">
+                    <p class="strain-card__description">${product.description}</p>
+                </div>
+                <div class="strain-card__indicator"></div>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error('Error fetching edibles:', error);
+        const container = document.querySelector('#edibles .category-section__card-holder');
+        container.innerHTML = '<p class="error-message">Unable to load edibles. Please try again later.</p>';
+    }
+}
+
+
+
 // DOM Elements
 const elements = {
 	hamburgerMenu: document.getElementById("hamburgerMenu"),
@@ -304,6 +567,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// Initialize Outdoor Strains
 	fetchOutdoorStrains();
+
+	// Initialize Greenhouse Strains
+	fetchGreenhouseStrains();
+
+	// Initialize AAA Greenhouse Strains
+	fetchAAAGreenhouseStrains();
+
+	// Initialize AAA Indoor Strains
+	fetchAAAIndoorStrains();
+
+	// Initialize Pre-Rolled
+	fetchPreRolled();
+
+	// Initialize Extracts and Vapes
+	fetchExtractsAndVapes();
+
+	// Initialize Edibles
+	fetchEdibles();
 
 	// Mobile Menu Events
 	elements.hamburgerMenu?.addEventListener("click", () => {
