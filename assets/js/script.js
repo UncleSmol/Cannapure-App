@@ -108,3 +108,39 @@ document.addEventListener("DOMContentLoaded", () => {
 	const initialPage = window.location.hash.substring(1) || "labPage";
 	showPage(initialPage);
 });
+
+// In your frontend JavaScript file
+async function fetchStrains() {
+    try {
+        const response = await fetch('/api/strains');
+        const strains = await response.json();
+        
+        const container = document.getElementById('weeklySpecialsWrapper');
+        container.innerHTML = strains.map(strain => `
+            <div class="strain-card">
+                <div class="strain-card__image-holder">
+                    <img src="${strain.image_url}" alt="${strain.strain_name}" loading="lazy" />
+                </div>
+                <div class="strain-card__name-holder">
+                    <p class="strain-card__name">${strain.strain_name}</p>
+                    <p class="strain-card__type">${strain.strain_type}</p>
+                </div>
+                <div class="strain-card__category-holder">
+                    <p class="strain-card__category">${strain.category}</p>
+                </div>
+                <div class="strain-card__price-holder">
+                    <p class="strain-card__price">R${strain.price.toFixed(2)}</p>
+                    <p class="strain-card__measurement">${strain.measurement_unit}</p>
+                </div>
+                <div class="strain-card__description-holder">
+                    <p class="strain-card__description">${strain.description}</p>
+                </div>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error('Error fetching strains:', error);
+    }
+}
+
+// Call this when the page loads
+document.addEventListener('DOMContentLoaded', fetchStrains);
