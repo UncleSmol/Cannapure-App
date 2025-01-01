@@ -39,7 +39,7 @@
 
 .strain-card__name-holder {
 	width: 100%;
-	height: auto;
+	height:400px;
 	position: relative;
 }
 
@@ -91,12 +91,10 @@
 
 /* Strain Card Component */
 .strain-card {
-	width: 150px;
-	height: 90%;
-	min-width: 150px;
-	max-width: 150px;
-	min-height: 90%;
-	max-height: 90%;
+	width: 220px;
+	height: 250px;
+	min-width: 220px;
+	max-width: 220px;
 	background: rgba(255, 246, 246, 0.39);
 	border-radius: 10px;
 	box-shadow: 0px 0px 10px;
@@ -106,7 +104,7 @@
 /* Image Section */
 .strain-card__image-holder {
 	width: 100%;
-	height: 56%;
+	height: 130px;
 	background: #ffd8d8;
 }
 
@@ -125,12 +123,15 @@
 
 .strain-card__name {
 	font-size: 15px;
+	line-height: 1;
 	margin: 0;
 	padding: 3px 5px;
 	padding-bottom: 0;
 	color: rgb(78, 163, 64);
 	font-weight: bold;
 	font-family: "Tilt Neon", serif;
+	width: 180px;
+	
 }
 
 .strain-card__type {
@@ -191,7 +192,7 @@
 /* Description Section */
 .strain-card__description-holder {
 	width: 100%;
-	height: auto;
+	height: 60px;
 }
 
 .strain-card__description {
@@ -199,19 +200,20 @@
 	margin: 0;
 	padding: 1px 5px;
 	line-height: 1;
-	height: 40px;
+	height: 100%;
 }
 
 /* Indicator Bar */
 .strain-card__indicator {
-	width: 100%;
-	height: inherit;
+	width: 0;
+	height: 100%;
 	background: #00bf08; /* This can be dynamically changed */
 }
 
 .lab-categories {
 	width: 100%;
 	max-width: 900px;
+	max-height: auto;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
@@ -223,7 +225,6 @@
 	margin: 0 auto;
 	width: 100%;
 	border-radius: 20px;
-	max-height: 800px;
 	height: 40px;
 	position: relative;
 	overflow: hidden;
