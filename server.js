@@ -14,9 +14,8 @@ app.use(
 		level: parseInt(process.env.COMPRESSION_LEVEL) || 6,
 	})
 );
-app.use(express.static(__dirname));
 
-// Database test route - ADD THIS NEW ROUTE
+// API Routes - Put these BEFORE static files middleware
 app.get("/api/test-db", async (req, res) => {
 	try {
 		const result = await pool.query("SELECT NOW()");
@@ -37,23 +36,20 @@ app.get("/api/test-db", async (req, res) => {
 
 // Weekly Specials endpoint
 app.get("/api/weekly-specials", async (req, res) => {
-    try {
-			const currentDate = "2025-01-01"; // Matching your system date exactly
-
-			// Let's simplify the query first to make sure we're getting data
-			const result = await pool.query(
-				"SELECT * FROM weekly_specials WHERE in_stock = true"
-			);
-
-			console.log("Query results:", result.rows); // This will show us what's coming from the database
-			res.json(result.rows);
-		} catch (err) {
-			console.error("Database error:", err);
-			res.status(500).json({
-				error: "Failed to fetch weekly specials",
-				details: err.message,
-			});
-		}
+	try {
+		const currentDate = "2025-01-01";
+		const result = await pool.query(
+			"SELECT * FROM weekly_specials WHERE in_stock = true"
+		);
+		console.log("Weekly specials query results:", result.rows);
+		res.json(result.rows);
+	} catch (err) {
+		console.error("Database error:", err);
+		res.status(500).json({
+			error: "Failed to fetch weekly specials",
+			details: err.message,
+		});
+	}
 });
 
 // Normal Strains endpoint
@@ -90,10 +86,11 @@ app.get("/api/outdoor-strains", async (req, res) => {
 	}
 });
 
+// Static files middleware - Put this AFTER API routes
+app.use(express.static(__dirname));
 
-
-// Your existing routes
-app.get("/", (req, res) => {
+// Catch-all route - Put this LAST
+app.get("*", (req, res) => {
 	res.sendFile(path.join(__dirname, "index.html"));
 });
 

@@ -1,3 +1,5 @@
+const API_BASE_URL = window.location.origin;
+
 async function fetchWeeklySpecials() {
 	try {
 		console.log("Fetching weekly specials..."); // Debug log
