@@ -230,6 +230,45 @@ app.get("/api/edibles", async (req, res) => {
 	}
 });
 
+// Members endpoint
+app.get("/api/membership/:number", async (req, res) => {
+    try {
+        const membershipNumber = req.params.number;
+        console.log("Searching for membership number:", membershipNumber);
+
+        const result = await pool.query(
+            `SELECT 
+                membership_number,
+                status,
+                join_date,
+                days_active,
+                last_renewal_date,
+                next_renewal_date
+             FROM members 
+             WHERE membership_number = $1`,
+            [membershipNumber]
+        );
+
+        if (result.rows.length === 0) {
+            console.log("No membership found for number:", membershipNumber);
+            return res.status(404).json({ 
+                error: 'Membership not found',
+                message: 'Please check your membership number and try again.'
+            });
+        }
+
+        console.log("Membership found:", result.rows[0]);
+        res.json(result.rows[0]);
+    } catch (err) {
+        console.error("Database error:", err);
+        res.status(500).json({
+            error: "Failed to fetch membership details",
+            details: err.message,
+        });
+    }
+});
+
+
 
 // Static files middleware - Put this AFTER API routes
 app.use(express.static(__dirname));

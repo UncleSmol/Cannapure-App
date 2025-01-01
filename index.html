@@ -627,6 +627,7 @@
 			</div>
 
 			<div class="membership hidden" id="membershipCardHolder">
+				<div class="membership-card__close" id="closeCardBtn">×</div>
 				<div class="membership-card" id="membershipCard">
 					<!-- Social Icons -->
 					<div class="membership-card__socials" id="cardSocialsHolder">
@@ -651,22 +652,26 @@
 
 					<!-- Card Text -->
 					<div class="membership-card__text">
-						<h1 class="membership-card__title">'SUP BRO...</h1>
-						<p class="membership-card__number">420-101</p>
-					</div>
-
+    <h1 class="membership-card__title">'SUP BRO...</h1>
+    <div class="membership-number-input">
+        <span class="prefix">420-</span>
+        <input type="text" 
+               id="membershipNumberInput" 
+               maxlength="3" 
+               placeholder="Enter your number"
+               class="membership-card__number-input">
+    </div>
+    <p class="membership-card__number hidden">420-<span id="displayMembershipNumber"></span></p>
+</div>
 					<!-- Status Info -->
-					<div class="membership-card__info">
-						<p class="membership-card__status">
-							Your membership status is currently active.
-						</p>
-						<p class="membership-card__details">
-							Thank you for your continued support. You have been a loyal member
-							for a whooping 487 days now, keep your record unbroken by renewing
-							your membership before the last day of each month.
-						</p>
-					</div>
-
+<div class="membership-card__info">
+    <p class="membership-card__status" id="membershipStatus">
+        Enter your membership number to view status
+    </p>
+    <p class="membership-card__details" id="membershipDetails">
+       This is still high...wait on it, it will start working eventually
+    </p>
+</div>
 					<!-- Background Image -->
 					<img
 						class="membership-card__background"

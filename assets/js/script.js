@@ -494,7 +494,31 @@ async function fetchEdibles() {
     }
 }
 
+// Membership Info
+async function updateMembershipInfo(memberNumber) {
+	try {
+		const response = await fetch(`/api/membership/420-${memberNumber}`);
+		const memberData = await response.json();
 
+		if (memberData) {
+			// Update status
+			document.getElementById(
+				"membershipStatus"
+			).textContent = `Your membership status is currently ${memberData.status.toLowerCase()}.`;
+
+			// Update details
+			document.getElementById(
+				"membershipDetails"
+			).textContent = `Thank you for your continued support. You have been a loyal member for a whooping ${memberData.days_active} days now, keep your record unbroken by renewing your membership before the last day of each month.`;
+		}
+	} catch (error) {
+		console.error("Error fetching membership:", error);
+		document.getElementById("membershipStatus").textContent =
+			"Unable to find membership. Please check your number.";
+		document.getElementById("membershipDetails").textContent =
+			"Please try again or contact support if the issue persists.";
+	}
+}
 
 // DOM Elements
 const elements = {
@@ -586,6 +610,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	// Initialize Edibles
 	fetchEdibles();
 
+	// Initialize Membership Card
+	updateMembershipInfo();
+
 	// Mobile Menu Events
 	elements.hamburgerMenu?.addEventListener("click", () => {
 		const shouldOpen = !elements.mobileNav.classList.contains("menu-active");
@@ -611,9 +638,15 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	// Membership Card Toggle
-	elements.pages.membership?.addEventListener("click", () => {
+
+	document.getElementById("closeCardBtn")?.addEventListener("click", () => {
 		toggleClass(elements.pages.membership, "hidden");
 		toggleClass(elements.pages.lab, "hidden");
+	});
+
+	// Add this to prevent clicks on the card from closing it
+	document.getElementById("membershipCard")?.addEventListener("click", (e) => {
+		e.stopPropagation();
 	});
 
 	// Navigation Links
