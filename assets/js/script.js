@@ -703,47 +703,40 @@ document.addEventListener("DOMContentLoaded", () => {
 	showPage(initialPage);
 });
 
-// Temporary 404 Redirect Script (Valid until 2025-01-03 03:03:03)
-document.addEventListener("DOMContentLoaded", function () {
-	// Handle membership link clicks
-	document.addEventListener("click", function (e) {
-		// Check if clicked element is a membership link
-		if (e.target.closest('a[href="#page404"]')) {
-			e.preventDefault();
+// Temporary 404 handler (Valid until 2025-01-03 03:18:43)
+document.addEventListener('DOMContentLoaded', function() {
+    const page404 = document.getElementById('page404');
+    
+    // Handle membership link clicks
+    document.addEventListener("click", function (e) {
+			const membershipLink = e.target.closest('a[href="#page404"]');
+			if (membershipLink) {
+				e.preventDefault();
 
-			// Hide all other pages
-			document.getElementById("homePage").classList.add("hidden");
-			document.getElementById("labPage").classList.add("hidden");
-			document.getElementById("talkToUsPage").classList.add("hidden");
-			document.getElementById("membershipCardHolder").classList.add("hidden");
+				// Hide all other pages
+				document.getElementById("homePage").classList.add("hidden");
+				document.getElementById("labPage").classList.add("hidden");
+				document.getElementById("talkToUsPage").classList.add("hidden");
+				document.getElementById("membershipCardHolder").classList.add("hidden");
 
-			// Show 404 page
-			const page404 = document.getElementById("page404");
-			page404.style.display = "flex";
-
-			// Close mobile menu if open
-			const mobileNav = document.getElementById("mobileNavigationList");
-			if (mobileNav.classList.contains("menu-active")) {
-				mobileNav.classList.remove("menu-active");
-				document.getElementById("overlay").classList.add("hidden");
+				// Show 404
+				page404.classList.add("active");
 			}
-		}
-	});
+		});
 
-	// Handle return from 404 page
-	document.addEventListener("click", function (e) {
-		if (e.target.closest(".error-button")) {
-			e.preventDefault();
-			const page404 = document.getElementById("page404");
-			page404.style.display = "none";
+		// Handle return buttons
+		const returnButtons = page404.querySelectorAll(".error-button");
+		returnButtons.forEach((button) => {
+			button.addEventListener("click", function (e) {
+				e.preventDefault();
 
-			// Get target page from button href
-			const targetHref = e.target.closest(".error-button").getAttribute("href");
-			const targetPage = targetHref.substring(1); // Remove #
+				// Hide 404
+				page404.classList.remove("active");
 
-			// Show target page
-			document.getElementById(targetPage).classList.remove("hidden");
-		}
-	});
+				// Show target page
+				const targetPage = this.getAttribute("href").substring(1);
+				document.getElementById(targetPage).classList.remove("hidden");
+			});
+		});
 });
 

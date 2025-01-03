@@ -15,6 +15,12 @@
 
 }
 
+.error-page.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
 .error-content {
     text-align: center;
     max-width: 600px;
