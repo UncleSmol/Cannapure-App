@@ -121,7 +121,7 @@
 
 /* Store Hours Section */
 .store-hours {
-    margin-bottom: var(--space-8);
+    margin-bottom: 60px;
 }
 
 .store-hours__title {
