@@ -77,6 +77,10 @@
     box-shadow: 0px 0px 10px var(--shadow-color);
     background: var(--glass-bg);
     transition: height var(--transition-normal);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
 }
 
 /* Height Toggle State */
@@ -88,12 +92,17 @@
 /* Category Button */
 .category-section__btn {
     position: absolute;
-    top: 3px;
+    top: 5px;
     right: 10px;
     z-index: 1;
     cursor: pointer;
     border: 2px solid transparent;
     transition: all var(--transition-normal);
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    box-shadow: white 0 0 10px;
+    background-color: var(--accent-green);
 }
 
 .category-section__btn:hover {
@@ -106,12 +115,12 @@
     width: 100%;
     margin: 0;
     background: var(--glass-bg);
-    border-radius: 0;
-    box-shadow: 0px 0px 10px;
     padding-left: 10px;
-    min-height: auto;
     font-family: var(--font-primary);
     color: var(--white);
+    height:45px;
+    padding-top:10px;
+    
 }
 
 /* Category Text */
@@ -134,9 +143,10 @@
 /* Card Container */
 .category-section__card-holder {
     width: 100%;
-    height: 100%;
+    height: 70%;
     padding: 11px 10px;
     overflow: auto;
+    
     gap: 20px;
     display: flex;
     flex-direction: row;
@@ -288,7 +298,4 @@
     }
 }
 
-/* Setting bottom margin on edibles tab */
-#edibles {
-    margin-bottom: 60px;
-}
+
