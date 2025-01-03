@@ -1,348 +1,203 @@
-.lab-title {
-	font-size: 44px;
-	font-family: "ADLaM Display", serif;
-	margin: 0 auto;
-	margin-bottom: 0;
-	max-width: 900px;
-	color: var(--bs-gray-800);
+/* _lab.css */
+
+/* Lab Page Container */
+.lab-page {
+    width: 100%;
+    height: auto;
 }
 
-/* Responsive adjustment if needed */
-@media (max-width: 576px) {
-	.lab-title {
-		font-size: 32px;
-	}
+/* Lab Title Section */
+.lab-title {
+    font-size: 44px;
+    font-family: var(--font-display);
+    margin: 0 auto;
+    margin-bottom: var(--space-4);
+    max-width: 900px;
+    color: var(--white);
 }
 
 .lab-subtitle {
-	font-family: "Tilt Neon", serif;
-	font-size: 22px;
-	margin: 0 auto;
-	margin-bottom: 0;
-	max-width: 900px;
-	color: rgb(78, 163, 64);
+    font-family: var(--font-primary);
+    font-size: 22px;
+    margin: 0 auto;
+    margin-bottom: var(--space-2);
+    max-width: 900px;
+    color: var(--accent-green);
 }
 
 .lab-description {
-	margin: 0 auto;
-	margin-bottom: 0;
-	max-width: 900px;
-	color: var(--bs-dark-text-emphasis);
-}
-
-/* Responsive adjustment if needed */
-@media (max-width: 576px) {
-	.lab-subtitle {
-		font-size: 18px;
-	}
-}
-
-.strain-card__name-holder {
-	width: 100%;
-	height:400px;
-	position: relative;
-}
-
-.strain-card__name {
-	font-size: 15px;
-	margin: 0;
-	padding: 3px 5px;
-	padding-bottom: 0;
-	color: rgb(78, 163, 64);
-	font-weight: bold;
-	font-family: "Tilt Neon", serif;
-}
-
-.strain-card__type {
-	position: absolute;
-	font-size: 11px;
-	margin: 0;
-	font-weight: bold;
-	font-family: "Tilt Neon", serif;
-	height: 100%;
-	display: flex;
-	align-items: flex-end;
-}
-
-.weekly-specials {
-	width: 100%;
-	height: 300px;
-	max-width: 900px;
-	margin: 0 auto;
-	padding: 15px;
-	padding-bottom: 0;
-	gap: 20px;
-	overflow: auto;
-	display: flex;
-	justify-content: flex-start;
-	align-items: flex-start;
-	flex-wrap: nowrap;
-}
-
-/* Hide scrollbar while maintaining functionality */
-.weekly-specials {
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
-}
-
-.weekly-specials::-webkit-scrollbar {
-	display: none; /* Chrome, Safari and Opera */
-}
-
-/* Strain Card Component */
-.strain-card {
-	width: 220px;
-	height: 250px;
-	min-width: 220px;
-	max-width: 220px;
-	background: rgba(255, 246, 246, 0.39);
-	border-radius: 10px;
-	box-shadow: 0px 0px 10px;
-	overflow: hidden;
-}
-
-/* Image Section */
-.strain-card__image-holder {
-	width: 100%;
-	height: 130px;
-	background: #ffd8d8;
-}
-
-.strain-card__image-holder img {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-}
-
-/* Name Section */
-.strain-card__name-holder {
-	width: 100%;
-	height: auto;
-	position: relative;
-}
-
-.strain-card__name {
-	font-size: 15px;
-	line-height: 1;
-	margin: 0;
-	padding: 3px 5px;
-	padding-bottom: 0;
-	color: rgb(78, 163, 64);
-	font-weight: bold;
-	font-family: "Tilt Neon", serif;
-	width: 180px;
-	
-}
-
-.strain-card__type {
-	position: absolute;
-	font-size: 11px;
-	margin: 0;
-	font-weight: bold;
-	font-family: "Tilt Neon", serif;
-	height: 100%;
-	bottom: 0;
-	right: 5px;
-	display: flex;
-	align-items: flex-end;
-}
-
-/* Category Section */
-.strain-card__category-holder {
-	width: 100%;
-	height: auto;
-	background: #fff6f6;
-}
-
-.strain-card__category {
-	margin: 0;
-	font-size: 11px;
-	text-align: right;
-	padding: 0 5px;
-	font-family: "Tilt Neon", serif;
-	display: flex;
-	justify-content: flex-start;
-}
-
-/* Price Section */
-.strain-card__price-holder {
-	width: auto;
-	height: auto;
-	padding: 0 5px;
-	display: flex;
-	justify-content: flex-end;
-	align-items: flex-end;
-}
-
-.strain-card__price {
-	font-size: 18px;
-	text-align: right;
-	margin: 0;
-	color: rgb(78, 163, 64);
-	font-family: "Tilt Neon", serif;
-}
-
-.strain-card__measurement {
-	margin: 0;
-	font-size: 12px;
-	padding-bottom: 2.5px;
-	font-family: "Tilt Neon", serif;
-}
-
-/* Description Section */
-.strain-card__description-holder {
-	width: 100%;
-	height: 60px;
-}
-
-.strain-card__description {
-	font-size: 11px;
-	margin: 0;
-	padding: 1px 5px;
-	line-height: 1;
-	height: 100%;
-}
-
-/* Indicator Bar */
-.strain-card__indicator {
-	width: 0;
-	height: 100%;
-	background: #00bf08; /* This can be dynamically changed */
-}
-
-.lab-categories {
-	width: 100%;
-	max-width: 900px;
-	max-height: auto;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
-}
-
-/* Category Section Container */
-.category-section {
-	margin: 0 auto;
-	width: 100%;
-	border-radius: 20px;
-	height: 40px;
-	position: relative;
-	overflow: hidden;
-	box-shadow: 0px 0px 10px var(--bs-emphasis-color);
-	border-radius: 0;
-}
-
-/* Category Button */
-.category-section__btn {
-	background: #000000;
-	position: absolute;
-	width: 30px;
-	height: 30px;
-	border-radius: 10px;
-}
-
-/* Category Heading */
-.category-section__heading {
-	font-size: 18px;
-	width: 100%;
-	margin: 0;
-	background: #fff6f6;
-	border-radius: 0;
-	box-shadow: 0px 0px 10px;
-	padding-left: 10px;
-	min-height: auto;
-	font-family: "Tilt Neon", serif;
-}
-
-/* Category Text Container */
-.category-section__text {
-	width: 100%;
-	height: auto;
-	padding-right: 10px;
-	padding-left: 15px;
-}
-
-.category-section__description {
-	padding-top: 10px;
-	font-size: 13px;
-	margin-top: 16px;
-	margin-bottom: 0;
-	overflow: hidden;
-}
-
-/* Card Container */
-.category-section__card-holder {
-	width: 100%;
-	height: 100%;
-	padding: 11px 10px;
-	overflow: auto;
-	gap: 20px;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	flex-wrap: nowrap;
-}
-
-/* Hide scrollbar while maintaining functionality */
-.category-section__card-holder {
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
-}
-
-.category-section__card-holder::-webkit-scrollbar {
-	display: none; /* Chrome, Safari and Opera */
+    margin: 0 auto;
+    margin-bottom: var(--space-6);
+    max-width: 900px;
+    color: var(--light-gray);
 }
 
 /* Lab Categories Container */
 .lab-categories {
-	width: 100%;
-	max-width: 900px;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 576px) {
-	.category-section__heading {
-		font-size: 16px;
-	}
-
-	.category-section__description {
-		font-size: 12px;
-	}
+/* Category Section Container */
+.category-section {
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 0;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px var(--glass-shadow);
+    transition: height var(--transition-normal);
+    background: var(--glass-bg);
 }
 
-/* State Modifiers */
-.category-section--expanded {
-	height: auto;
+/* When expanded */
+.category-section.expanded {
+    height: auto;
+    max-height: 400px;
+}
+
+/* Category Button */
+.category-section__btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    transition: all var(--transition-normal);
+}
+
+.category-section__btn::after {
+    content: '+';
+    color: var(--white);
+    font-size: 20px;
+    transition: transform var(--transition-normal);
+}
+
+.category-section__btn.active::after {
+    transform: rotate(45deg);
+}
+
+.category-section__btn:hover {
+    background: var(--accent-green);
+    transform: scale(1.1);
+}
+
+/* Category Heading */
+.category-section__heading {
+    font-size: 18px;
+    width: 100%;
+    margin: 0;
+    background: var(--glass-bg);
+    padding: 10px;
+    min-height: 40px;
+    font-family: var(--font-primary);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+}
+
+/* Category Text Container */
+.category-section__text {
+    width: 100%;
+    height: auto;
+    padding: 10px 15px;
+}
+
+.category-section__description {
+    font-size: 13px;
+    color: var(--light-gray);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Card Container */
+.category-section__card-holder {
+    width: 100%;
+    padding: 15px 10px;
+    overflow-x: auto;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.category-section__card-holder::-webkit-scrollbar {
+    display: none;
+}
+
+/* Weekly Specials Section */
+.weekly-specials {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto var(--space-8) auto;
+    padding: 15px;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.weekly-specials::-webkit-scrollbar {
+    display: none;
 }
 
 /* Animation Classes */
-.category-section--animating {
-	transition: height 0.3s ease-in-out;
+.category-section {
+    transition: height var(--transition-normal);
 }
 
-/* Lab Page Section */
-.lab-page {
-	width: 100%;
-	height: auto;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .lab-title {
+        font-size: 32px;
+    }
+
+    .lab-subtitle {
+        font-size: 18px;
+    }
+
+    .category-section__heading {
+        font-size: 16px;
+    }
+
+    .category-section__description {
+        font-size: 12px;
+    }
+
+    .category-section__card-holder {
+        padding: 10px;
+        gap: 15px;
+    }
 }
 
-/* If you need a modifier for the section class */
-.section--lab {
-	width: 100%;
-	height: auto;
+@media (max-width: 576px) {
+    .lab-title {
+        font-size: 28px;
+    }
+
+    .weekly-specials,
+    .category-section__card-holder {
+        padding: 10px 5px;
+    }
 }
 
-/* If you prefer keeping the original class structure */
-#labPage.section {
-	width: 100%;
-	height: auto;
-}
-
-/*Setting bottom margin on edibles tab so get it into viewport*/
-#edibles{
-	margin-bottom: 60px;
+/* Bottom Margin for Last Section */
+#edibles {
+    margin-bottom: 60px;
 }

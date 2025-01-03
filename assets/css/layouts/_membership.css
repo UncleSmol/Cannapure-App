@@ -1,0 +1,230 @@
+/* _membership.css */
+
+/* Membership Container */
+.membership {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(10, 31, 15, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--z-modal);
+    animation: fadeIn var(--transition-normal);
+}
+
+/* Membership Card */
+.membership-card {
+    width: 350px;
+    height: 500px;
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    transform: translateY(20px);
+    animation: slideUp var(--transition-normal) forwards;
+}
+
+/* Card Background */
+.membership-card__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Card Content Overlay */
+.membership-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        rgba(10, 31, 15, 0.8),
+        rgba(46, 94, 54, 0.6)
+    );
+    z-index: 2;
+}
+
+/* Card Logo */
+.membership-card__logo {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    width: 60px;
+    height: 60px;
+    z-index: 3;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.membership-card__logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Card Text Content */
+.membership-card__text {
+    position: absolute;
+    top: 50%;
+    left: var(--space-4);
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 70%;
+}
+
+.membership-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    color: var(--white);
+    margin-bottom: var(--space-4);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Membership Number Input */
+.membership-number-input {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+}
+
+.prefix {
+    font-size: var(--text-lg);
+    color: var(--accent-green);
+    font-weight: var(--weight-bold);
+}
+
+.membership-card__number-input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--accent-green);
+    padding: var(--space-2);
+    color: var(--white);
+    width: 100px;
+    font-size: var(--text-lg);
+    text-align: left;
+}
+
+.membership-card__number-input:focus {
+    outline: none;
+    border-color: var(--white);
+}
+
+/* Membership Info */
+.membership-card__info {
+    position: absolute;
+    bottom: var(--space-6);
+    left: var(--space-4);
+    right: var(--space-4);
+    z-index: 3;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+}
+
+.membership-card__status {
+    color: var(--accent-green);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-2);
+}
+
+.membership-card__details {
+    color: var(--white);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+}
+
+/* Social Icons */
+.membership-card__socials {
+    position: absolute;
+    bottom: var(--space-4);
+    left: var(--space-4);
+    z-index: 3;
+    display: flex;
+    gap: var(--space-3);
+}
+
+.membership-card__social {
+    width: 30px;
+    height: 30px;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    transition: transform var(--transition-normal);
+}
+
+.membership-card__social:hover {
+    transform: translateY(-2px);
+}
+
+/* Close Button */
+.membership-card__close {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    width: 30px;
+    height: 30px;
+    background: var(--glass-bg);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: var(--text-xl);
+    cursor: pointer;
+    z-index: 4;
+    transition: all var(--transition-normal);
+}
+
+.membership-card__close:hover {
+    background: var(--accent-green);
+    transform: rotate(90deg);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+    .membership-card {
+        width: 90%;
+        height: 450px;
+    }
+
+    .membership-card__text {
+        width: 80%;
+    }
+
+    .membership-card__title {
+        font-size: var(--text-xl);
+    }
+
+    .membership-card__info {
+        padding: var(--space-3);
+    }
+}

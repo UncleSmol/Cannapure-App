@@ -1,0 +1,121 @@
+/* Design System - Modern Cannabis Theme */
+
+:root {
+    /* Color System */
+    --primary-green: #2A5E36;      /* Main brand color */
+    --light-green: #3C8D4F;        /* Accents and highlights */
+    --dark-green: #1A3B21;         /* Backgrounds and shadows */
+    --success-green: #4EA340;      /* Success states */
+    
+    /* Neutral Colors */
+    --white: #FFFFFF;
+    --off-white: #F8F9FA;
+    --light-gray: #E9ECEF;
+    --medium-gray: #6C757D;
+    --dark-gray: #343A40;
+    --black: #212529;
+
+    /* Glass Effects */
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+    --gradient-overlay: linear-gradient(135deg, rgba(42, 94, 54, 0.85), rgba(26, 59, 33, 0.95));
+
+    /* Spacing System */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-xxl: 48px;
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+
+    /* Typography */
+    --font-primary: "Tilt Neon", sans-serif;
+    --font-display: "ADLaM Display", serif;
+    
+    /* Font Sizes */
+    --text-xs: 12px;
+    --text-sm: 14px;
+    --text-md: 16px;
+    --text-lg: 18px;
+    --text-xl: 24px;
+    --text-2xl: 32px;
+    --text-3xl: 40px;
+
+    /* Layout */
+    --header-height: 60px;
+    --max-width: 1200px;
+    --card-width: 300px;
+
+    /* Z-index Layers */
+    --z-overlay: 1000;
+    --z-modal: 100;
+    --z-header: 90;
+    --z-nav: 80;
+    --z-content: 1;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Utility Classes */
+.glass-effect {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--text-md);
+    line-height: 1.5;
+    color: var(--white);
+    background-color: var(--dark-green);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 576px) {
+    :root {
+        /* Adjust spacing for mobile */
+        --space-lg: 20px;
+        --space-xl: 24px;
+        --space-xxl: 32px;
+        
+        /* Adjust font sizes for mobile */
+        --text-2xl: 28px;
+        --text-3xl: 32px;
+    }
+}

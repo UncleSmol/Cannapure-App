@@ -1,0 +1,174 @@
+/* _main.css */
+
+/* Main Layout Container */
+.main-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    transform: translateY(var(--header-height));
+    overflow-y: auto;
+    overflow-x: hidden;
+ background-color: blanchedalmonds;
+    padding: var(--space-4);
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Background Overlay */
+.main-content::before {
+    content: '';
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: var(--z-negative);
+}
+
+/* Page Container */
+.page-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding-bottom: var(--space-10);
+    position: relative;
+    z-index: var(--z-elevate);
+}
+
+/* Section Layout */
+.section {
+    margin-bottom: var(--space-8);
+}
+
+.section__header {
+    margin-bottom: var(--space-6);
+}
+
+.section__title {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    color: var(--white);
+    margin-bottom: var(--space-2);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.section__subtitle {
+    font-size: var(--text-lg);
+    color: var(--accent-green);
+}
+
+/* Grid Layouts */
+.grid-container {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+/* Flex Layouts */
+.flex-container {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+/* Scroll Container */
+.scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: var(--space-2) 0;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-bottom: var(--space-6);
+}
+
+/* Loading States */
+.loading-overlay {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-overlay);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--z-modal);
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--glass-border);
+    border-radius: 50%;
+    border-top-color: var(--accent-green);
+    animation: spin 1s linear infinite;
+}
+
+/* Animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Layouts */
+@media (max-width: 1200px) {
+    .page-container {
+        padding: 0 var(--space-4);
+    }
+}
+
+@media (max-width: 768px) {
+    .section__title {
+        font-size: var(--text-2xl);
+    }
+
+    .section__subtitle {
+        font-size: var(--text-base);
+    }
+
+    .content-wrapper {
+        padding: var(--space-4);
+    }
+}
+
+@media (max-width: 640px) {
+    .main-content {
+        padding: var(--space-2);
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        margin-bottom: var(--space-6);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .main-content {
+        position: relative;
+        transform: none;
+        background: none;
+        padding: 0;
+    }
+
+    .main-content::before {
+        display: none;
+    }
+}

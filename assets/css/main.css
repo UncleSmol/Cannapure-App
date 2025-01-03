@@ -1,0 +1,33 @@
+/* main.css */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Plaster&family=Tilt+Neon&family=Whisper&display=swap');
+
+/* Base Imports */
+@import url('./base/_variables.css');
+@import url('./base/_reset.css');
+@import url('./base/_utilities.css');
+@import url('./base/_vendor-prefixes.css');
+
+/* Component Imports */
+@import url('./components/_header.css');
+@import url('./components/_navigation.css');
+@import url('./components/_cards.css');
+@import url('./components/_buttons.css');
+
+/* Layout Imports */
+@import url('./layouts/_main.css');
+@import url('./layouts/_lab.css');
+@import url('./layouts/_home.css');
+@import url('./layouts/_membership.css');
+@import url('./layouts/_talk-to-us.css');
+
+/* Any additional global styles can go here */
+:root {
+    /* Any runtime variables or theme overrides */
+}
+
+/* Print styles */
+@media print {
+    /* Global print styles */
+}

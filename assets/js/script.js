@@ -621,13 +621,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	elements.overlay?.addEventListener("click", () => toggleMenuSystem(false));
 
-	// Category Section Toggle
+	// Category Configuration - Keep this part the same
+	const categories = [
+		{ buttonId: "outdoorBtn", sectionId: "outdoorStrains" },
+		{ buttonId: "normalBtn", sectionId: "normalStrains" },
+		{ buttonId: "greenhouseBtn", sectionId: "greenhouseStrains" },
+		{ buttonId: "aaaGreenhouseBtn", sectionId: "aaaGreenhouseStrains" },
+		{ buttonId: "aaaIndoorBtn", sectionId: "aaaIndoorStrains" },
+		{ buttonId: "preRolledBtn", sectionId: "preRolls" },
+		{ buttonId: "extractsAndVapesBtn", sectionId: "extractsAndVapes" },
+		{ buttonId: "ediblesBtn", sectionId: "edibles" },
+	];
+
+	// Updated Category Section Toggle
 	categories.forEach(({ buttonId, sectionId }) => {
 		const button = document.getElementById(buttonId);
 		const section = document.getElementById(sectionId);
 
 		if (button && section) {
-			button.addEventListener("click", () => toggleClass(section, "h-auto"));
+			button.addEventListener("click", () => {
+				// Close all other sections first
+				categories.forEach(({ sectionId: otherId }) => {
+					if (otherId !== sectionId) {
+						const otherSection = document.getElementById(otherId);
+						if (otherSection) {
+							otherSection.classList.remove("expanded");
+							otherSection.style.height = "40px"; // Default height
+						}
+					}
+				});
+
+				// Toggle current section
+				const isExpanded = section.classList.contains("expanded");
+
+				if (!isExpanded) {
+					section.classList.add("expanded");
+					section.style.height = "400px"; // Expanded height
+				} else {
+					section.classList.remove("expanded");
+					section.style.height = "40px"; // Default height
+				}
+
+				// Toggle button state
+				button.classList.toggle("active");
+			});
 		} else {
 			console.warn(
 				`Element not found: ${
@@ -665,3 +702,48 @@ document.addEventListener("DOMContentLoaded", () => {
 	const initialPage = window.location.hash.substring(1) || "labPage";
 	showPage(initialPage);
 });
+
+// Temporary 404 Redirect Script (Valid until 2025-01-03 03:03:03)
+document.addEventListener("DOMContentLoaded", function () {
+	// Handle membership link clicks
+	document.addEventListener("click", function (e) {
+		// Check if clicked element is a membership link
+		if (e.target.closest('a[href="#page404"]')) {
+			e.preventDefault();
+
+			// Hide all other pages
+			document.getElementById("homePage").classList.add("hidden");
+			document.getElementById("labPage").classList.add("hidden");
+			document.getElementById("talkToUsPage").classList.add("hidden");
+			document.getElementById("membershipCardHolder").classList.add("hidden");
+
+			// Show 404 page
+			const page404 = document.getElementById("page404");
+			page404.style.display = "flex";
+
+			// Close mobile menu if open
+			const mobileNav = document.getElementById("mobileNavigationList");
+			if (mobileNav.classList.contains("menu-active")) {
+				mobileNav.classList.remove("menu-active");
+				document.getElementById("overlay").classList.add("hidden");
+			}
+		}
+	});
+
+	// Handle return from 404 page
+	document.addEventListener("click", function (e) {
+		if (e.target.closest(".error-button")) {
+			e.preventDefault();
+			const page404 = document.getElementById("page404");
+			page404.style.display = "none";
+
+			// Get target page from button href
+			const targetHref = e.target.closest(".error-button").getAttribute("href");
+			const targetPage = targetHref.substring(1); // Remove #
+
+			// Show target page
+			document.getElementById(targetPage).classList.remove("hidden");
+		}
+	});
+});
+

@@ -1,0 +1,199 @@
+/* _navigation.css */
+
+/* Main Navigation Container */
+.nav-container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* Category Navigation */
+.category-nav {
+    display: flex;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.category-nav::-webkit-scrollbar {
+    display: none;
+}
+
+/* Category Button */
+.category-btn {
+    padding: var(--space-2) var(--space-4);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    color: var(--white);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    white-space: nowrap;
+    transition: all var(--transition-normal);
+}
+
+.category-btn:hover {
+    background: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.category-btn.active {
+    background: var(--accent-green);
+    border-color: var(--accent-green);
+}
+
+/* Section Navigation */
+.section-nav {
+    position: sticky;
+    top: var(--header-height);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: var(--z-sticky);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+/* Section Toggle Button */
+.section-toggle {
+    width: 100%;
+    padding: var(--space-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    color: var(--white);
+    transition: background var(--transition-fast);
+}
+
+.section-toggle:hover {
+    background: var(--glass-bg);
+}
+
+.section-toggle__icon {
+    width: 20px;
+    height: 20px;
+    transition: transform var(--transition-normal);
+}
+
+.section-toggle.active .section-toggle__icon {
+    transform: rotate(180deg);
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--medium-gray);
+}
+
+.breadcrumb__separator {
+    color: var(--glass-border);
+}
+
+.breadcrumb__link {
+    color: var(--white);
+    transition: color var(--transition-fast);
+}
+
+.breadcrumb__link:hover {
+    color: var(--accent-green);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4);
+}
+
+.pagination__btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--white);
+    transition: all var(--transition-normal);
+}
+
+.pagination__btn:hover {
+    background: var(--primary-green);
+    transform: translateY(-2px);
+}
+
+.pagination__btn.active {
+    background: var(--accent-green);
+    border-color: var(--accent-green);
+}
+
+/* Tab Navigation */
+.tab-nav {
+    display: flex;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.tab-nav__item {
+    padding: var(--space-2) var(--space-4);
+    color: var(--medium-gray);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.tab-nav__item::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-green);
+    transform: scaleX(0);
+    transition: transform var(--transition-normal);
+}
+
+.tab-nav__item:hover {
+    color: var(--white);
+}
+
+.tab-nav__item.active {
+    color: var(--white);
+}
+
+.tab-nav__item.active::after {
+    transform: scaleX(1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+    .category-nav {
+        padding: var(--space-2);
+    }
+
+    .section-nav {
+        position: static;
+    }
+
+    .breadcrumb {
+        padding: var(--space-2);
+        font-size: var(--text-xs);
+    }
+
+    .pagination__btn {
+        width: 32px;
+        height: 32px;
+    }
+}
