@@ -735,7 +735,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		{ buttonId: "ediblesBtn", sectionId: "edibles" },
 	];
 
-	// Updated Category Section Toggle
+	// Category Section Toggle
 	categories.forEach(({ buttonId, sectionId }) => {
 		const button = document.getElementById(buttonId);
 		const section = document.getElementById(sectionId);
@@ -783,7 +783,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		toggleClass(elements.pages.lab, "hidden");
 	});
 
-	// Add this to prevent clicks on the card from closing it
+	// Prevent clicks on the card from closing it
 	document.getElementById("membershipCard")?.addEventListener("click", (e) => {
 		e.stopPropagation();
 	});
