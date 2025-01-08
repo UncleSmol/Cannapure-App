@@ -58,7 +58,7 @@
 					<a href="#labPage">LAB</a>
 				</li>
 				<li class="site-header__nav-item" id="desktopMembership">
-					<a href="#page404">MEMBERSHIP</a>
+					<a href="#membershipCardHolder">MEMBERSHIP</a>
 				</li>
 				<li class="site-header__nav-item" id="desktopTalkToUs">
 					<a href="#talkToUsPage">TALK TO US</a>
@@ -102,7 +102,7 @@
 										alt="Membership Icon" />
 								</a>
 							</div>
-							<a href="#page404" class="mobile-nav__text"
+							<a href="#membershipCardHolder" class="mobile-nav__text"
 								>MEMBERSHIP</a
 							>
 						</div>
@@ -612,6 +612,8 @@
 			<div class="membership hidden" id="membershipCardHolder">
 				<div class="membership-card__close" id="closeCardBtn">×</div>
 				<div class="membership-card" id="membershipCard">
+
+
 					<!-- Social Icons -->
 					<div class="membership-card__socials" id="cardSocialsHolder">
 						<div class="membership-card__social">
@@ -635,26 +637,26 @@
 
 					<!-- Card Text -->
 					<div class="membership-card__text">
-    <h1 class="membership-card__title">'SUP BRO...</h1>
-    <div class="membership-number-input">
-        <span class="prefix">420-</span>
-        <input type="text" 
-               id="membershipNumberInput" 
-               maxlength="3" 
-               placeholder="Enter your number"
-               class="membership-card__number-input">
-    </div>
-    <p class="membership-card__number hidden">420-<span id="displayMembershipNumber"></span></p>
-</div>
+					<h1 class="membership-card__title">'SUP BRO...</h1>
+					<div class="membership-number-input">
+						<span class="prefix">420</span>
+						<input type="text" 
+							id="membershipNumberInput" 
+							maxlength="3" 
+							placeholder="Membership number"
+							class="membership-card__number-input">
+					</div>
+					<p class="membership-card__number hidden">420-<span id="displayMembershipNumber"></span></p>
+					</div>
 					<!-- Status Info -->
-<div class="membership-card__info">
-    <p class="membership-card__status" id="membershipStatus">
-        Enter your membership number to view status
-    </p>
-    <p class="membership-card__details" id="membershipDetails">
-       This is still high...wait on it, it will start working eventually
-    </p>
-</div>
+					<div class="membership-card__info">
+						<p class="membership-card__status" id="membershipStatus">
+							Enter your membership number
+						</p>
+						<p class="membership-card__details" id="membershipDetails">
+						This is still high...wait on it, it will start working eventually
+						</p>
+					</div>
 					<!-- Background Image -->
 					<img
 						class="membership-card__background"
@@ -664,114 +666,110 @@
 			</div>
 
 			<div id="talkToUsPage" class="talk-to-us-page hidden">
+			<!-- Hero Section -->
+			<div class="talk-to-us__hero">
+				<h1 class="talk-to-us__title">LET'S CONNECT</h1>
+				<p class="talk-to-us__subtitle">Quick and easy ways to reach us</p>
+			</div>
 
+			<!-- Contact Methods Grid -->
+			<div class="talk-to-us__methods">
+				<!-- WhatsApp -->
+				<div class="contact-method">
+					<div class="contact-method__icon">
+						<img src="https://static.vecteezy.com/system/resources/previews/012/162/809/original/whatsapp-logo-3d-render-free-png.png" alt="WhatsApp" />
+					</div>
+					<h2 class="contact-method__title">WhatsApp</h2>
+					<p class="contact-method__description">
+						Fastest way to reach us
+					</p>
+					<a href="https://wa.me/0647513912" class="contact-method__button">
+						Chat Now
+					</a>
+				</div>
 
+				<!-- Telegram -->
+				<div class="contact-method">
+					<div class="contact-method__icon">
+						<img src="https://static.vecteezy.com/system/resources/previews/013/191/634/non_2x/telegram-3d-illustration-free-png.png" alt="Telegram" />
+					</div>
+					<h2 class="contact-method__title">Telegram</h2>
+					<p class="contact-method__description">
+						Secure and instant messaging
+					</p>
+					<a href="https://t.me/yourusername" class="contact-method__button">
+						Message Us
+					</a>
+				</div>
 
+				<!-- Signal -->
+				<div class="contact-method">
+					<div class="contact-method__icon">
+						<img src="https://static.vecteezy.com/system/resources/previews/024/624/749/original/3d-rendering-signal-transmission-icon-3d-render-antenna-or-broadcasting-tower-and-signal-waves-icon-png.png" alt="Signal" />
+					</div>
+					<h2 class="contact-method__title">Signal</h2>
+					<p class="contact-method__description">
+						Private and encrypted chat
+					</p>
+					<a href="signal://chat?number=yourphonenumber" class="contact-method__button">
+						Connect
+					</a>
+				</div>
+			</div>
 
-    <!-- Hero Section -->
-    <div class="talk-to-us__hero">
-        <h1 class="talk-to-us__title">LET'S CONNECT</h1>
-        <p class="talk-to-us__subtitle">Quick and easy ways to reach us</p>
-    </div>
+			<!-- Quick FAQ Section -->
+			<div class="talk-to-us__faq">
+				<h2 class="faq__title">QUICK ANSWERS</h2>
+				<div class="faq__grid">
+					<!-- FAQ Item 1 -->
+					<div class="faq__item">
+						<h3 class="faq__question">How do I become a member?</h3>
+						<p class="faq__answer">
+							Visit our store with valid ID. Our staff will guide you through the quick membership process.
+						</p>
+					</div>
 
-    <!-- Contact Methods Grid -->
-    <div class="talk-to-us__methods">
-        <!-- WhatsApp -->
-        <div class="contact-method">
-            <div class="contact-method__icon">
-                <img src="https://static.vecteezy.com/system/resources/previews/012/162/809/original/whatsapp-logo-3d-render-free-png.png" alt="WhatsApp" />
-            </div>
-            <h2 class="contact-method__title">WhatsApp</h2>
-            <p class="contact-method__description">
-                Fastest way to reach us
-            </p>
-            <a href="https://wa.me/yourphonenumber" class="contact-method__button">
-                Chat Now
-            </a>
-        </div>
+					<!-- FAQ Item 2 -->
+					<div class="faq__item">
+						<h3 class="faq__question">What are your store hours?</h3>
+						<p class="faq__answer">
+							Monday to Saturday: 8 AM - 8 PM<br>
+							Sunday: 8 AM - 5 PM
+						</p>
+					</div>
 
-        <!-- Telegram -->
-        <div class="contact-method">
-            <div class="contact-method__icon">
-                <img src="https://static.vecteezy.com/system/resources/previews/013/191/634/non_2x/telegram-3d-illustration-free-png.png" alt="Telegram" />
-            </div>
-            <h2 class="contact-method__title">Telegram</h2>
-            <p class="contact-method__description">
-                Secure and instant messaging
-            </p>
-            <a href="https://t.me/yourusername" class="contact-method__button">
-                Message Us
-            </a>
-        </div>
+					<!-- FAQ Item 3 -->
+					<div class="faq__item">
+						<h3 class="faq__question">Do you offer delivery?</h3>
+						<p class="faq__answer">
+							We are an in-store only establishment. Visit us to explore our full range of products.
+						</p>
+					</div>
 
-        <!-- Signal -->
-        <div class="contact-method">
-            <div class="contact-method__icon">
-                <img src="https://static.vecteezy.com/system/resources/previews/024/624/749/original/3d-rendering-signal-transmission-icon-3d-render-antenna-or-broadcasting-tower-and-signal-waves-icon-png.png" alt="Signal" />
-            </div>
-            <h2 class="contact-method__title">Signal</h2>
-            <p class="contact-method__description">
-                Private and encrypted chat
-            </p>
-            <a href="signal://chat?number=yourphonenumber" class="contact-method__button">
-                Connect
-            </a>
-        </div>
-    </div>
+					<!-- FAQ Item 4 -->
+					<div class="faq__item">
+						<h3 class="faq__question">What payment methods do you accept?</h3>
+						<p class="faq__answer">
+							We accept cash and major credit cards in store.
+						</p>
+					</div>
+				</div>
+			</div>
 
-    <!-- Quick FAQ Section -->
-    <div class="talk-to-us__faq">
-        <h2 class="faq__title">QUICK ANSWERS</h2>
-        <div class="faq__grid">
-            <!-- FAQ Item 1 -->
-            <div class="faq__item">
-                <h3 class="faq__question">How do I become a member?</h3>
-                <p class="faq__answer">
-                    Visit our store with valid ID. Our staff will guide you through the quick membership process.
-                </p>
-            </div>
-
-            <!-- FAQ Item 2 -->
-            <div class="faq__item">
-                <h3 class="faq__question">What are your store hours?</h3>
-                <p class="faq__answer">
-                    Monday to Saturday: 8 AM - 8 PM<br>
-                    Sunday: 8 AM - 5 PM
-                </p>
-            </div>
-
-            <!-- FAQ Item 3 -->
-            <div class="faq__item">
-                <h3 class="faq__question">Do you offer delivery?</h3>
-                <p class="faq__answer">
-                    We are an in-store only establishment. Visit us to explore our full range of products.
-                </p>
-            </div>
-
-            <!-- FAQ Item 4 -->
-            <div class="faq__item">
-                <h3 class="faq__question">What payment methods do you accept?</h3>
-                <p class="faq__answer">
-                    We accept cash and major credit cards in store.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Location Hours Banner -->
-    <div class="talk-to-us__location">
-        <div class="location__content">
-            <div class="location__hours">
-                <h2 class="hours__title">STORE HOURS</h2>
-                <p class="hours__text">MON-SAT: 8AM - 8PM</p>
-                <p class="hours__text">SUN: 8AM - 5PM</p>
-            </div>
-            <div class="location__address">
-                <h2 class="address__title">FIND US</h2>
-                <p class="address__text">Visit us in store for the full experience</p>
-            </div>
-        </div>
-    </div>
+			<!-- Location Hours Banner -->
+			<div class="talk-to-us__location">
+				<div class="location__content">
+					<div class="location__hours">
+						<h2 class="hours__title">STORE HOURS</h2>
+						<p class="hours__text">MON-SAT: 8AM - 8PM</p>
+						<p class="hours__text">SUN: 8AM - 5PM</p>
+					</div>
+					<div class="location__address">
+						<h2 class="address__title">FIND US</h2>
+						<p class="address__text">Visit us in store for the full experience</p>
+					</div>
+				</div>
+			</div>
 			</div>
 
 			<!-- 404.html -->

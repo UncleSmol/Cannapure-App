@@ -495,29 +495,131 @@ async function fetchEdibles() {
 }
 
 // Membership Info
-async function updateMembershipInfo(memberNumber) {
-	try {
-		const response = await fetch(`/api/membership/420-${memberNumber}`);
-		const memberData = await response.json();
+// Membership Card Handler (Added 2025-01-08 23:57:38)
+const membershipElements = {
+    input: document.getElementById('membershipNumberInput'),
+    status: document.getElementById('membershipStatus'),
+    details: document.getElementById('membershipDetails'),
+    displayNumber: document.getElementById('displayMembershipNumber'),
+    numberDisplay: document.querySelector('.membership-card__number')
+};
 
-		if (memberData) {
-			// Update status
-			document.getElementById(
-				"membershipStatus"
-			).textContent = `Your membership status is currently ${memberData.status.toLowerCase()}.`;
+const membershipMessages = {
+    greetings() {
+        const hour = new Date().getHours();
+        if (hour >= 5 && hour < 12) return "Good morning, early bird! ";
+        if (hour >= 12 && hour < 17) return "Hey there! ";
+        if (hour >= 17 && hour < 22) return "Good evening! ";
+        return "Burning the midnight oil? ";
+    },
 
-			// Update details
-			document.getElementById(
-				"membershipDetails"
-			).textContent = `Thank you for your continued support. You have been a loyal member for a whooping ${memberData.days_active} days now, keep your record unbroken by renewing your membership before the last day of each month.`;
-		}
-	} catch (error) {
-		console.error("Error fetching membership:", error);
-		document.getElementById("membershipStatus").textContent =
-			"Unable to find membership. Please check your number.";
-		document.getElementById("membershipDetails").textContent =
-			"Please try again or contact support if the issue persists.";
+    statusMessage(status) {
+        switch(status.toLowerCase()) {
+            case 'active':
+                return "Your membership is active and ready to roll!";
+            case 'expired':
+                return "Looks like your membership needs a quick renewal to keep the good vibes flowing.";
+            case 'pending':
+                return "Almost there! Your membership is being processed.";
+            default:
+                return "Membership status unavailable.";
+        }
+    },
+
+    durationMessage(days) {
+        if (days < 30) return "Welcome to the family! You're just getting started.";
+        if (days < 90) return `${days} days with us - the journey's just beginning!`;
+        if (days < 365) return `${days} days and counting! You're becoming a regular face around here.`;
+        return `Wow! ${days} days with us - you're practically family now!`;
+    },
+
+    renewalMessage(nextRenewalDate) {
+        const daysUntilRenewal = Math.ceil((new Date(nextRenewalDate) - new Date()) / (1000 * 60 * 60 * 24));
+        
+        if (daysUntilRenewal <= 7) {
+            return `⚠️ Heads up! Your renewal is due in ${daysUntilRenewal} days (${new Date(nextRenewalDate).toLocaleDateString()}).`;
+        }
+        if (daysUntilRenewal <= 30) {
+            return `Your next renewal is coming up on ${new Date(nextRenewalDate).toLocaleDateString()} - keep it in mind!`;
+        }
+        return `Your next renewal is scheduled for ${new Date(nextRenewalDate).toLocaleDateString()} - you're all set!`;
+    }
+};
+
+async function initializeMembershipCard() {
+	const membershipInput = membershipElements.input;
+
+	if (membershipInput) {
+		membershipInput.addEventListener("input", async function (e) {
+			// Only allow numbers
+			this.value = this.value.replace(/[^0-9]/g, "");
+
+			// Check if we have exactly 3 digits
+			if (this.value.length === 3) {
+				try {
+					// Disable input while checking
+					this.setAttribute("disabled", true);
+
+					// Format and call API
+					const formattedNumber = `420-${this.value}`;
+					const response = await fetch(`/api/membership/${formattedNumber}`);
+
+					if (!response.ok) {
+						// If membership not found, re-enable input
+						this.removeAttribute("disabled");
+						const errorData = await response.json();
+						throw new Error(errorData.message);
+					}
+
+					const memberData = await response.json();
+					updateMembershipDisplay(memberData);
+				} catch (error) {
+					console.error("Membership check failed:", error);
+					showMembershipError();
+				}
+			}
+		});
 	}
+}
+
+function updateMembershipDisplay(memberData) {
+	// Construct friendly message
+	const greeting = membershipMessages.greetings();
+	const statusMsg = membershipMessages.statusMessage(memberData.status);
+	const durationMsg = membershipMessages.durationMessage(
+		memberData.days_active
+	);
+	const renewalMsg = membershipMessages.renewalMessage(
+		memberData.next_renewal_date
+	);
+
+	// Update status with greeting and status
+	membershipElements.status.textContent = `${greeting}${statusMsg}`;
+
+	// Add appropriate status class
+	membershipElements.status.className = "membership-card__status";
+	membershipElements.status.classList.add(
+		`membership-card__status--${memberData.status.toLowerCase()}`
+	);
+
+	// Update details with duration and renewal info
+	membershipElements.details.innerHTML = `
+        ${durationMsg}<br><br>
+        ${renewalMsg}
+    `;
+
+	// Show membership number
+	membershipElements.displayNumber.textContent = memberData.membership_number;
+	membershipElements.numberDisplay.classList.remove("hidden");
+}
+
+function showMembershipError() {
+	membershipElements.input.removeAttribute("disabled");
+	membershipElements.status.textContent =
+		"Hmm... we couldn't find that membership number.";
+	membershipElements.details.textContent =
+		"Double-check the number and try again, or visit us in-store if you need help.";
+	membershipElements.numberDisplay.classList.add("hidden");
 }
 
 // DOM Elements
@@ -611,7 +713,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	fetchEdibles();
 
 	// Initialize Membership Card
-	updateMembershipInfo();
+	initializeMembershipCard();
 
 	// Mobile Menu Events
 	elements.hamburgerMenu?.addEventListener("click", () => {
@@ -703,54 +805,4 @@ document.addEventListener("DOMContentLoaded", () => {
 	showPage(initialPage);
 });
 
-// Temporary 404 handler (Valid until 2025-01-03 03:36:27)
-document.addEventListener('DOMContentLoaded', function() {
-	const page404 = document.getElementById("page404");
-
-	// Ensure 404 page is hidden initially
-	page404.style.display = "none";
-	page404.classList.add("hidden");
-
-	// Handle membership link clicks
-	document.addEventListener("click", function (e) {
-		const membershipLink = e.target.closest('a[href="#page404"]');
-
-		// If clicking any other navigation link, ensure 404 is hidden
-		const otherNavLink = e.target.closest('a[href^="#"]');
-		if (otherNavLink && !membershipLink) {
-			page404.classList.add("hidden");
-			page404.style.display = "none";
-		}
-
-		if (membershipLink) {
-			e.preventDefault();
-
-			// Hide all other pages
-			document.getElementById("homePage").classList.add("hidden");
-			document.getElementById("labPage").classList.add("hidden");
-			document.getElementById("talkToUsPage").classList.add("hidden");
-			document.getElementById("membershipCardHolder").classList.add("hidden");
-
-			// Show 404
-			page404.classList.remove("hidden");
-			page404.style.display = "flex";
-		}
-	});
-
-	// Handle return buttons
-	const returnButtons = page404.querySelectorAll(".error-button");
-	returnButtons.forEach((button) => {
-		button.addEventListener("click", function (e) {
-			e.preventDefault();
-
-			// Hide 404 and ensure hidden class is added
-			page404.classList.add("hidden");
-			page404.style.display = "none";
-
-			// Show target page
-			const targetPage = this.getAttribute("href").substring(1);
-			document.getElementById(targetPage).classList.remove("hidden");
-		});
-	});
-});
 

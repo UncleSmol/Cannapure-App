@@ -61,7 +61,8 @@
 /* Text Content */
 .membership-card__text {
 	position: absolute;
-	width: 70%;
+	width: auto;
+	overflow: visible;
 }
 
 .membership-card__title {
@@ -139,8 +140,7 @@
     justify-content: center;
 	position: absolute;
 	top: 80px;
-	left: 68px;
-	width: 100%;
+	width: auto;
 	overflow: visible;
 }
 
@@ -150,14 +150,18 @@
 }
 
 .membership-card__number-input {
-    width:100%;
-    padding: 5px;
+    width:auto;
     font-size: 16px;
     text-align: left;
     border: none;
     background: transparent;
     color: inherit;
     outline: none;
+}
+
+/*Targeting Place holder on Membership Card t reduce it's font sizes*/
+.membership-card__number-input::placeholder{
+	font-size: 9px;
 }
 
 .hidden {
