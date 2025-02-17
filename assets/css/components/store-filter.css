@@ -1,0 +1,143 @@
+/* Circular Store Selector Styles */
+.store-circle {
+    position: fixed;
+    right: 20px;
+    top: calc(var(--header-height) + 20px);
+    z-index: var(--z-sticky);
+}
+
+/* Main Circle Button */
+.store-circle__button {
+    width: 100px;
+    height: 60px;
+    border-radius: 10px;
+    margin-top: -70px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.store-circle__button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#storeButtonText {
+    color: var(--white);
+    font-size: 12px;
+    font-weight: var(--weight-medium);
+    text-align: center;
+}
+
+/* Store Options Panel */
+.store-circle__options {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 15px;
+    width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.store-circle__options.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.store-circle__message {
+    color: var(--white);
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.store-circle__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Store Options */
+.__store {
+    padding: 8px;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    text-align: center;
+    color: var(--white);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.__store:hover {
+    background: var(--glass-bg);
+    transform: translateY(-2px);
+}
+
+.__store.selected {
+    background: var(--accent-green);
+    border-color: var(--accent-green);
+}
+
+/* Animation for selected state */
+.store-circle__button.selected {
+    border-color: var(--accent-green);
+}
+
+/* Hide options panel by default */
+.hidden {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .store-circle {
+        right: 15px;
+        top: calc(var(--header-height) + 15px);
+        height:60px;
+    }
+
+    .store-circle__button {
+        width: 100px;
+        height: 50px;
+    }
+
+    .store-circle__options {
+        width: 180px;
+    }
+}
+
+.store-circle__button {
+    /* Add these properties to your existing styles */
+    position: relative;
+    z-index: 1000;
+    pointer-events: auto;
+}
+
+.store-circle {
+    /* Add this property */
+    pointer-events: none;
+}
+
+.store-circle__options {
+    /* Add this property */
+    pointer-events: auto;
+}

@@ -58,20 +58,7 @@ a {
 	-o-transition: 0.3s ease-in-out;
 	transition: 0.3s ease-in-out;
 }
-.menu-active {
-	display: block;
-	opacity: 1;
-	-webkit-transform: translateY(60px);
-	-moz-transform: translateY(60px);
-	-ms-transform: translateY(60px);
-	-o-transform: translateY(60px);
-	transform: translateY(60px);
-	-webkit-transition: 0.3s ease-in-out;
-	-moz-transition: 0.3s ease-in-out;
-	-ms-transition: 0.3s ease-in-out;
-	-o-transition: 0.3s ease-in-out;
-	transition: 0.3s ease-in-out;
-}
+
 .hamSpan {
 	-webkit-transition: 0.3s ease-in-out;
 	-moz-transition: 0.3s ease-in-out;

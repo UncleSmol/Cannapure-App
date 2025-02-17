@@ -1,0 +1,152 @@
+/* _reset.css */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove default margin and padding */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    color: var(--white);
+   background: linear-gradient(
+    150deg,
+    #0A1F0F 0%,
+    #2A5E36 35%,
+    #4EA340 65%,
+    #2A5E36 85%,
+    #0A1F0F 100%
+);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Remove list styles */
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Reset links */
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* Reset buttons */
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
+}
+
+/* Form elements reset */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Scrollbar styling */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-green) var(--dark-green);
+}
+
+/* Chrome, Edge, and Safari scrollbar styling */
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--dark-green);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--primary-green);
+    border-radius: var(--radius-full);
+    border: 2px solid var(--dark-green);
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
+}
+
+/* Selection styling */
+::selection {
+    background: var(--accent-green);
+    color: var(--white);
+}
+
+/* Focus styling */
+:focus {
+    outline: 2px solid var(--accent-green);
+    outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent-green);
+    outline-offset: 2px;
+}
+
+/* Hide scrollbar for specific elements while maintaining functionality */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}

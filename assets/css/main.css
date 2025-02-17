@@ -3,31 +3,27 @@
 /* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Plaster&family=Tilt+Neon&family=Whisper&display=swap');
 
+/*Temp CSS Import*/
+@import url('./styles.css');
+
 /* Base Imports */
-@import url('./base/_variables.css');
-@import url('./base/_reset.css');
-@import url('./base/_utilities.css');
-@import url('./base/_vendor-prefixes.css');
+@import url('./base/variables.css');
+@import url('./base/reset.css');
+@import url('./base/utilities.css');
+@import url('./base/vendor-prefixes.css');
 
 /* Component Imports */
-@import url('./components/_header.css');
-@import url('./components/_navigation.css');
-@import url('./components/_cards.css');
-@import url('./components/_buttons.css');
+@import url('./components/header.css');
+@import url('./components/navigation.css');
+@import url('./components/cards.css');
+@import url('./components/buttons.css');
+
 
 /* Layout Imports */
-@import url('./layouts/_main.css');
-@import url('./layouts/_lab.css');
-@import url('./layouts/_home.css');
-@import url('./layouts/_membership.css');
-@import url('./layouts/_talk-to-us.css');
+@import url('./layouts/main.css');
+@import url('./layouts/lab.css');
+@import url('./layouts/home.css');
+@import url('./layouts/membership.css');
+@import url('./layouts/talk-to-us.css');
+@import url('/layouts/store-filter.css');
 
-/* Any additional global styles can go here */
-:root {
-    /* Any runtime variables or theme overrides */
-}
-
-/* Print styles */
-@media print {
-    /* Global print styles */
-}

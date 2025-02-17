@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 	<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>Cannapure</title>
-    
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" >
+    <title>Cannapure Plus</title>
+
     <!-- Favicons -->
-    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="./assets/img/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" type="image/png" sizes="180x180" href="./assets/img/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="./assets/img/android-chrome-192x192.png" />
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="./assets/img/apple-touch-icon.png" >
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png" >
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png" media="(prefers-color-scheme: dark)" >
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png" >
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png" media="(prefers-color-scheme: dark)" >
+    <link rel="icon" type="image/png" sizes="180x180" href="./assets/img/apple-touch-icon.png" >
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/img/android-chrome-192x192.png" >
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" >
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" >
 
     <!-- Base Styles -->
-    <link rel="stylesheet" href="./assets/css/base/_variables.css" />
-    <link rel="stylesheet" href="./assets/css/base/_reset.css" />
-    <link rel="stylesheet" href="./assets/css/base/_utilities.css" />
-    <link rel="stylesheet" href="./assets/css/base/_vendor-prefixes.css" />
+    <link rel="stylesheet" href="./assets/css/base/variables.css" >
+    <link rel="stylesheet" href="./assets/css/base/reset.css" >
+    <link rel="stylesheet" href="./assets/css/base/utilities.css" >
+    <link rel="stylesheet" href="./assets/css/base/vendor-prefixes.css" >
 
     <!-- Components -->
-    <link rel="stylesheet" href="./assets/css/components/_header.css" />
-    <link rel="stylesheet" href="./assets/css/components/_navigation.css" />
-    <link rel="stylesheet" href="./assets/css/components/_cards.css" />
-    <link rel="stylesheet" href="./assets/css/components/_buttons.css" />
+    <link rel="stylesheet" href="./assets/css/components/header.css" >
+    <link rel="stylesheet" href="./assets/css/components/navigation.css" >
+    <link rel="stylesheet" href="./assets/css/components/cards.css" >
+    <link rel="stylesheet" href="./assets/css/components/buttons.css" >
+	<link rel="stylesheet" href="./assets/css/components/store-filter.css">
 
     <!-- Layouts -->
-    <link rel="stylesheet" href="./assets/css/layouts/_main.css" />
-    <link rel="stylesheet" href="./assets/css/layouts/_lab.css" />
-    <link rel="stylesheet" href="./assets/css/layouts/_home.css" />
-    <link rel="stylesheet" href="./assets/css/layouts/_membership.css" />
-    <link rel="stylesheet" href="./assets/css/layouts/_talk-to-us.css" />
+    <link rel="stylesheet" href="./assets/css/layouts/main.css" >
+    <link rel="stylesheet" href="./assets/css/layouts/lab.css" >
+    <link rel="stylesheet" href="./assets/css/layouts/home.css" >
+    <link rel="stylesheet" href="./assets/css/layouts/membership.css" >
+    <link rel="stylesheet" href="./assets/css/layouts/talk-to-us.css" >
+	<link rel="stylesheet" href="./assets/css/layouts/user-auth.css" >
+	
 	</head>
 
 	<body>
@@ -46,7 +49,7 @@
 		<header class="site-header">
 			<div class="site-header__logo">
 				<h1 class="site-header__title">
-					<a href="#homePage">CANNAPURE</a>
+					<a href="#homePage">CANNAPURE+</a>
 				</h1>
 			</div>
 
@@ -54,14 +57,17 @@
 				<li class="site-header__nav-item" id="desktopHome">
 					<a href="#homePage">HOME</a>
 				</li>
-				<li class="site-header__nav-item" id="desktopLab">
-					<a href="#labPage">LAB</a>
+				<li class="site-header__nav-item" id="desktopBudBar">
+					<a href="#theBudBarPage">THE BUD BAR</a>
 				</li>
 				<li class="site-header__nav-item" id="desktopMembership">
 					<a href="#membershipCardHolder">MEMBERSHIP</a>
 				</li>
 				<li class="site-header__nav-item" id="desktopTalkToUs">
 					<a href="#talkToUsPage">TALK TO US</a>
+				</li>
+				<li class="site-header__nav-item" id="desktopUserAuth">
+					<a href="#userAuthenticationPage">LOGIN</a>
 				</li>
 			</ul>
 
@@ -77,7 +83,7 @@
 						<div class="mobile-nav__icon-wrapper">
 							<div class="mobile-nav__icon">
 								<a href="#homePage">
-									<img src="./assets/img/homeIcon.png" alt="Home Icon" />
+									<img src="./assets/icons/bold/home_filled.svg" alt="Home Icon" >
 								</a>
 							</div>
 							<a href="#homePage" class="mobile-nav__text">HOME</a>
@@ -86,11 +92,11 @@
 					<li class="mobile-nav__item">
 						<div class="mobile-nav__icon-wrapper">
 							<div class="mobile-nav__icon">
-								<a href="#labPage">
-									<img src="./assets/img/aboutUsIcon.png" alt="Lab Icon" />
+								<a href="#theBudBarPage">
+									<img src="./assets/icons/bold/cube.svg" alt="The Bud Bar Icon" >
 								</a>
 							</div>
-							<a href="#labPage" class="mobile-nav__text">LAB</a>
+							<a href="#theBudBarPage" class="mobile-nav__text">THE BUD BAR</a>
 						</div>
 					</li>
 					<li class="mobile-nav__item">
@@ -98,8 +104,8 @@
 							<div class="mobile-nav__icon">
 								<a href="#membershipCardHolder">
 									<img
-										src="./assets/img/clipboard-image.png"
-										alt="Membership Icon" />
+										src="./assets/icons/bold/crown 1.svg"
+										alt="Membership Icon" >
 								</a>
 							</div>
 							<a href="#membershipCardHolder" class="mobile-nav__text"
@@ -112,115 +118,68 @@
 							<div class="mobile-nav__icon">
 								<a href="#talkToUsPage">
 									<img
-										src="./assets/img/clipboard-image-2.png"
-										alt="Contact Icon" />
+										src="./assets/icons/bold/chat-bubble-bottom-center.svg"
+										alt="Contact Icon" >
 								</a>
 							</div>
 							<a href="#talkToUsPage" class="mobile-nav__text">TALK TO US</a>
 						</div>
 					</li>
+					<li class="mobile-nav__item">
+						<div class="mobile-nav__icon-wrapper">
+							<div class="mobile-nav__icon">
+								<a href="#userAuthenticationPage">
+									<img
+										src="./assets/icons/bold/login.svg"
+										alt="User Authentication Icon" >
+								</a>
+							</div>
+							<a href="#userAuthenticationPage" class="mobile-nav__text">LOGIN</a>
+						</div>
+					</li>
 				</ul>
 				<div class="mobile-nav__logo-container">
-					<img src="./assets/img/cannipure-logo.png" alt="Cannapure Logo" />
+					<img src="./assets/img/cannipure-logo.png" alt="Cannapure Logo" >
 				</div>
 			</div>
 		</header>
 
 		<main class="main-content">
-			<div id="labPage" class="section lab-page hidden">
-				<h1 class="lab-title">OUR LAB</h1>
+			<div id="theBudBarPage" class="section lab-page hidden">
+				
+				<!-- Store Filter - Circular Design -->
+				<div id="shops" class="store-circle">
+					<!-- Circular Button/Toggle -->
+					<div id="storeCircleBtn" class="store-circle__button">
+						<span id="storeButtonText">STORE</span>
+					</div>
+
+					<!-- Store Selection Panel-->
+					<div id="storeOptions" class="store-circle__options">
+						<div id="storeMessage" class="store-circle__message">Pick a store near you</div>
+						<div class="store-circle__list">
+							<div class="__store" id="witbank">WITBANK</div>
+							<div class="__store" id="dullstroom">DULLSTROOM</div>
+						</div>
+					</div>
+				</div>
+
+
+				<h1 class="lab-title">THE BUD BAR</h1>
 
 				<p class="lab-subtitle">WEEKLY SPECIALS</p>
 				<p class="lab-description">
 					Check out what is hot on the shelves this week!
 				</p>
 
-				<div class="weekly-specials" id="weeklySpecialsWrapper">
-					<div class="strain-card">
-						<div class="strain-card__image-holder">
-							<img
-								src="./assets/img/cannipure-logo.png"
-								alt="Strain Image"
-								loading="lazy" />
-						</div>
-
-						<div class="strain-card__name-holder">
-							<p class="strain-card__name">OG KUSH</p>
-							<p class="strain-card__type">SATIVA</p>
-						</div>
-
-						<div class="strain-card__category-holder">
-							<p class="strain-card__category">BUDGET GREENHOUSE</p>
-						</div>
-
-						<div class="strain-card__price-holder">
-							<p class="strain-card__price">R25,00</p>
-							<p class="strain-card__measurement">/1g</p>
-						</div>
-
-						<div class="strain-card__description-holder">
-							<p class="strain-card__description">
-								Here will have a brief description about this strain
-							</p>
-						</div>
-
-						<div class="strain-card__indicator"></div>
-					</div>
+				<div class="weekly_specials" id="weeklySpecialsWrapper">
+					
 				</div>
 				<div class="lab-categories" id="categorySectionLab">
-					<div class="category-section" id="outdoorStrains">
-						<div
-							class="category-section__btn opn-cls-btn"
-							id="outdoorBtn"></div>
-
-						<h1 class="category-section__heading">OUTDOOR</h1>
-
-						<div class="category-section__text">
-							<p class="category-section__description">
-								All our Outdoor strains are self-grown except all our Indica
-								strains.
-							</p>
-						</div>
-
-						<div class="category-section__card-holder">
-							<div class="strain-card">
-								<div class="strain-card__image-holder">
-									<img
-										src="./assets/img/cannipure-logo.png"
-										alt="Strain Image"
-										loading="lazy" />
-								</div>
-
-								<div class="strain-card__name-holder">
-									<p class="strain-card__name">OG KUSH</p>
-									<p class="strain-card__type">SATIVA</p>
-								</div>
-
-								<div class="strain-card__category-holder">
-									<p class="strain-card__category">OUTDOOR</p>
-								</div>
-
-								<div class="strain-card__price-holder">
-									<p class="strain-card__price">R25,00</p>
-									<p class="strain-card__measurement">/1g</p>
-								</div>
-
-								<div class="strain-card__description-holder">
-									<p class="strain-card__description">
-										Here will have a brief description about this strain
-									</p>
-								</div>
-
-								<div class="strain-card__indicator"></div>
-							</div>
-						</div>
-					</div>
-
+    
 					<div class="category-section" id="normalStrains">
 						<div class="category-section__btn opn-cls-btn" id="normalBtn"></div>
-
 						<h1 class="category-section__heading">NORMAL STRAINS</h1>
-
 						<div class="category-section__text">
 							<p class="category-section__description">
 								Feeling like kicking it back most of the time? our normal
@@ -228,334 +187,115 @@
 								laid-back feel anytime you want it.
 							</p>
 						</div>
-
 						<div class="category-section__card-holder">
-							<div class="strain-card">
-								<div class="strain-card__image-holder">
-									<img
-										src="./assets/img/cannipure-logo.png"
-										alt="Strain Image"
-										loading="lazy" />
-								</div>
-
-								<div class="strain-card__name-holder">
-									<p class="strain-card__name">OG KUSH</p>
-									<p class="strain-card__type">SATIVA</p>
-								</div>
-
-								<div class="strain-card__category-holder">
-									<p class="strain-card__category">NORMAL STRAIN</p>
-								</div>
-
-								<div class="strain-card__price-holder">
-									<p class="strain-card__price">R25,00</p>
-									<p class="strain-card__measurement">/1g</p>
-								</div>
-
-								<div class="strain-card__description-holder">
-									<p class="strain-card__description">
-										Here will have a brief description about this strain
-									</p>
-								</div>
-
-								<div class="strain-card__indicator"></div>
-							</div>
+							<!-- Cards will be dynamically inserted here -->
 						</div>
 					</div>
 
 					<div class="category-section" id="greenhouseStrains">
-						<div
-							class="category-section__btn opn-cls-btn"
-							id="greenhouseBtn"></div>
-
+						<div class="category-section__btn opn-cls-btn" id="greenhouseBtn"></div>
 						<h1 class="category-section__heading">GREENHOUSE STRAINS</h1>
-
 						<div class="category-section__text">
 							<p class="category-section__description">
 								Our Greenhouse strains are all Citrus punch-packed and Loaded
 								and they will knock you out if not smoked with caution hehe.
 							</p>
 						</div>
-
 						<div class="category-section__card-holder">
-							<div class="strain-card">
-								<div class="strain-card__image-holder">
-									<img
-										src="./assets/img/cannipure-logo.png"
-										alt="Strain Image"
-										loading="lazy" />
-								</div>
-
-								<div class="strain-card__name-holder">
-									<p class="strain-card__name">OG KUSH</p>
-									<p class="strain-card__type">SATIVA</p>
-								</div>
-
-								<div class="strain-card__category-holder">
-									<p class="strain-card__category">GREENHOUSE</p>
-								</div>
-
-								<div class="strain-card__price-holder">
-									<p class="strain-card__price">R25,00</p>
-									<p class="strain-card__measurement">/1g</p>
-								</div>
-
-								<div class="strain-card__description-holder">
-									<p class="strain-card__description">
-										Here will have a brief description about this strain
-									</p>
-								</div>
-
-								<div class="strain-card__indicator"></div>
-							</div>
+							<!-- Cards will be dynamically inserted here -->
 						</div>
 					</div>
 
-					<div class="category-section" id="aaaGreenhouseStrains">
-						<div
-							class="category-section__btn opn-cls-btn"
-							id="aaaGreenhouseBtn"></div>
-
-						<h1 class="category-section__heading">AAA GREENHOUSE STRAINS</h1>
-
+					<div class="category-section" id="exoticTunnelStrains">
+						<div class="category-section__btn opn-cls-btn" id="exoticTunnelBtn"></div>
+						<h1 class="category-section__heading">EXOTIC TUNNEL STRAINS</h1>
 						<div class="category-section__text">
 							<p class="category-section__description">
-								Quality Grade Weed deserves Quality Smoking. Our AAA Greenhouse
-								are exotic strains that will speak to your buds all day no rest.
+								Experience our premium selection of exotic strains, carefully cultivated
+								in controlled environments for maximum potency and unique flavors.
 							</p>
 						</div>
-
 						<div class="category-section__card-holder">
-							<div class="strain-card">
-								<div class="strain-card__image-holder">
-									<img
-										src="./assets/img/cannipure-logo.png"
-										alt="Strain Image"
-										loading="lazy" />
-								</div>
-
-								<div class="strain-card__name-holder">
-									<p class="strain-card__name">OG KUSH</p>
-									<p class="strain-card__type">SATIVA</p>
-								</div>
-
-								<div class="strain-card__category-holder">
-									<p class="strain-card__category">AAA GREENHOUSE</p>
-								</div>
-
-								<div class="strain-card__price-holder">
-									<p class="strain-card__price">R25,00</p>
-									<p class="strain-card__measurement">/1g</p>
-								</div>
-
-								<div class="strain-card__description-holder">
-									<p class="strain-card__description">
-										Here will have a brief description about this strain
-									</p>
-								</div>
-
-								<div class="strain-card__indicator"></div>
-							</div>
+							<!-- Cards will be dynamically inserted here -->
 						</div>
 					</div>
 
-					<div class="category-section" id="aaaIndoorStrains">
-						<div
-							class="category-section__btn opn-cls-btn"
-							id="aaaIndoorBtn"></div>
-
-						<h1 class="category-section__heading">AAA INDOOR STRAINS</h1>
-
+					<div class="category-section" id="indoorStrains">
+						<div class="category-section__btn opn-cls-btn" id="indoorBtn"></div>
+						<h1 class="category-section__heading">INDOOR STRAINS</h1>
 						<div class="category-section__text">
 							<p class="category-section__description">
-								Quality Over Quality...Our AAA Indoor is where you want to be,
-								trust us...
+								Premium indoor-grown strains, meticulously cultivated in controlled
+								environments for consistent quality and superior potency.
 							</p>
 						</div>
-
 						<div class="category-section__card-holder">
-							<div class="strain-card">
-								<div class="strain-card__image-holder">
-									<img
-										src="./assets/img/cannipure-logo.png"
-										alt="Strain Image"
-										loading="lazy" />
-								</div>
+							<!-- Cards will be dynamically inserted here -->
+						</div>
+					</div>
 
-								<div class="strain-card__name-holder">
-									<p class="strain-card__name">OG KUSH</p>
-									<p class="strain-card__type">SATIVA</p>
-								</div>
-
-								<div class="strain-card__category-holder">
-									<p class="strain-card__category">AAA INDOOR</p>
-								</div>
-
-								<div class="strain-card__price-holder">
-									<p class="strain-card__price">R25,00</p>
-									<p class="strain-card__measurement">/1g</p>
-								</div>
-
-								<div class="strain-card__description-holder">
-									<p class="strain-card__description">
-										Here will have a brief description about this strain
-									</p>
-								</div>
-
-								<div class="strain-card__indicator"></div>
-							</div>
+					<div class="category-section" id="medicalStrains">
+						<div class="category-section__btn opn-cls-btn" id="medicalBtn"></div>
+						<h1 class="category-section__heading">MEDICAL STRAINS</h1>
+						<div class="category-section__text">
+							<p class="category-section__description">
+								Specially selected strains with therapeutic properties, perfect for
+								those seeking relief while maintaining clarity and wellness.
+							</p>
+						</div>
+						<div class="category-section__card-holder">
+							<!-- Cards will be dynamically inserted here -->
 						</div>
 					</div>
 
 					<div class="category-section" id="preRolls">
-						<div
-							class="category-section__btn opn-cls-btn"
-							id="preRolledBtn"></div>
-
+						<div class="category-section__btn opn-cls-btn" id="preRolledBtn"></div>
 						<h1 class="category-section__heading">PRE-ROLLED</h1>
-
 						<div class="category-section__text">
 							<p class="category-section__description">
 								Your next Ahh... moment will come from our Ready-On-The-Counter
 								conversation.
 							</p>
 						</div>
-
 						<div class="category-section__card-holder">
-							<div class="strain-card">
-								<div class="strain-card__image-holder">
-									<img
-										src="./assets/img/cannipure-logo.png"
-										alt="Strain Image"
-										loading="lazy" />
-								</div>
-
-								<div class="strain-card__name-holder">
-									<p class="strain-card__name">OG KUSH</p>
-									<p class="strain-card__type">SATIVA</p>
-								</div>
-
-								<div class="strain-card__category-holder">
-									<p class="strain-card__category">PRE-ROLLED</p>
-								</div>
-
-								<div class="strain-card__price-holder">
-									<p class="strain-card__price">R25,00</p>
-									<p class="strain-card__measurement">/1g</p>
-								</div>
-
-								<div class="strain-card__description-holder">
-									<p class="strain-card__description">
-										Here will have a brief description about this strain
-									</p>
-								</div>
-
-								<div class="strain-card__indicator"></div>
-							</div>
+							<!-- Cards will be dynamically inserted here -->
 						</div>
 					</div>
 
 					<div class="category-section" id="extractsAndVapes">
-						<div
-							class="category-section__btn opn-cls-btn"
-							id="extractsAndVapesBtn"></div>
-
-						<h1 class="category-section__heading">EXTRACTS & VAPES</h1>
-
+						<div class="category-section__btn opn-cls-btn" id="extractsAndVapesBtn"></div>
+						<h1 class="category-section__heading">EXTRACTS &amp; VAPES</h1>
 						<div class="category-section__text">
 							<p class="category-section__description">
 								There are many ways to kill a cat, we do not know of any,
 								however we do know of a way you could get higher...
 							</p>
 						</div>
-
 						<div class="category-section__card-holder">
-							<div class="strain-card">
-								<div class="strain-card__image-holder">
-									<img
-										src="./assets/img/cannipure-logo.png"
-										alt="Strain Image"
-										loading="lazy" />
-								</div>
-
-								<div class="strain-card__name-holder">
-									<p class="strain-card__name">OG KUSH</p>
-									<p class="strain-card__type">SATIVA</p>
-								</div>
-
-								<div class="strain-card__category-holder">
-									<p class="strain-card__category">EXTRACTS & VAPES</p>
-								</div>
-
-								<div class="strain-card__price-holder">
-									<p class="strain-card__price">R25,00</p>
-									<p class="strain-card__measurement">/1g</p>
-								</div>
-
-								<div class="strain-card__description-holder">
-									<p class="strain-card__description">
-										Here will have a brief description about this strain
-									</p>
-								</div>
-
-								<div class="strain-card__indicator"></div>
-							</div>
+							<!-- Cards will be dynamically inserted here -->
 						</div>
 					</div>
 
 					<div class="category-section" id="edibles">
-						<div
-							class="category-section__btn opn-cls-btn"
-							id="ediblesBtn"></div>
-
+						<div class="category-section__btn opn-cls-btn" id="ediblesBtn"></div>
 						<h1 class="category-section__heading">EDIBLES</h1>
-
 						<div class="category-section__text">
 							<p class="category-section__description">
 								There is no waiting for the happy hour...it shall find you
 								ahead.
 							</p>
 						</div>
-
 						<div class="category-section__card-holder">
-							<div class="strain-card">
-								<div class="strain-card__image-holder">
-									<img
-										src="./assets/img/cannipure-logo.png"
-										alt="Strain Image"
-										loading="lazy" />
-								</div>
-
-								<div class="strain-card__name-holder">
-									<p class="strain-card__name">OG KUSH</p>
-									<p class="strain-card__type">SATIVA</p>
-								</div>
-
-								<div class="strain-card__category-holder">
-									<p class="strain-card__category">EDIBLES</p>
-								</div>
-
-								<div class="strain-card__price-holder">
-									<p class="strain-card__price">R25,00</p>
-									<p class="strain-card__measurement">/1g</p>
-								</div>
-
-								<div class="strain-card__description-holder">
-									<p class="strain-card__description">
-										Here will have a brief description about this strain
-									</p>
-								</div>
-
-								<div class="strain-card__indicator"></div>
-							</div>
+							<!-- Cards will be dynamically inserted here -->
 						</div>
 					</div>
 				</div>
+
 			</div>
 			<div id="homePage" class="home-page hidden">
 				<!-- Hero Section -->
 				<div class="hero" id="heroSectionImage">
-					<img class="hero__image" src="./assets/img/clipboard-image-4.png" />
+					<img class="hero__image" src="./assets/img/clipboard-image-4.png" alt="image of man smoking weed" >
 
 					<div class="hero__content" id="heroSectionTextHolder">
 						<h1 class="hero__title">
@@ -563,7 +303,7 @@
 						</h1>
 
 						<div class="hero__buttons" id="heroSectionButtonsHolder">
-							<a class="hero__button" id="labCtaBtn" href="#labPage">
+							<a class="hero__button" id="labCtaBtn" href="#theBudBarPage">
 								TO THE LAB
 							</a>
 							<a class="hero__button" id="talkToUsCtaBtn" href="#talkToUsPage">
@@ -595,8 +335,8 @@
 					<h1 class="store-hours__title">STORE HOURS</h1>
 					<div class="store-hours__container">
 						<p class="store-hours__text">
-							Our doors are open to serve you:<br />
-							Monday to Saturday: 8 AM - 8 PM<br />
+							Our doors are open to serve you:<br >
+							Monday to Saturday: 8 AM - 8 PM<br >
 							Sunday: 8 AM - 5 PM
 						</p>
 						<p class="store-hours__text">
@@ -613,12 +353,9 @@
 				<div class="membership-card__close" id="closeCardBtn">×</div>
 				<div class="membership-card" id="membershipCard">
 
-
-					
-
 					<!-- Logo -->
 					<div class="membership-card__logo" id="cardLogoHolder">
-						<img src="./assets/img/cannipure-logo.png" alt="Cannapure Logo" />
+						<img src="./assets/img/cannipure-logo.png" alt="Cannapure Logo" >
 					</div>
 
 					<!-- Card Text -->
@@ -647,7 +384,7 @@
 					<img
 						class="membership-card__background"
 						src="./assets/img/membershipCard.png"
-						alt="Membership Card Background" />
+						alt="Membership Card Background" >
 				</div>
 			</div>
 
@@ -663,14 +400,14 @@
 				<!-- WhatsApp -->
 				<div class="contact-method">
 					<div class="contact-method__icon">
-						<img src="https://static.vecteezy.com/system/resources/thumbnails/022/493/580/small_2x/3d-render-whatsapp-logo-icon-isolated-on-transparent-background-free-png.png" alt="WhatsApp" />
+						<img src="https://static.vecteezy.com/system/resources/thumbnails/022/493/580/small_2x/3d-render-whatsapp-logo-icon-isolated-on-transparent-background-free-png.png" alt="WhatsApp" >
 					</div>
 					<h2 class="contact-method__title">WhatsApp</h2>
 					<p class="contact-method__description">
 						Fastest way to reach us
 					</p>
 					<a
-					
+
 					 href="https://wa.me/0647513912" class="contact-method__button">
 						Chat Now
 					</a>
@@ -679,7 +416,7 @@
 				<!-- Facebook -->
 				<div class="contact-method">
 					<div class="contact-method__icon">
-						<img src="https://static.vecteezy.com/system/resources/previews/022/488/746/original/3d-render-facebook-logo-icon-isolated-on-transparent-background-free-png.png" alt="Telegram" />
+						<img src="https://static.vecteezy.com/system/resources/previews/022/488/746/original/3d-render-facebook-logo-icon-isolated-on-transparent-background-free-png.png" alt="Telegram" >
 					</div>
 					<h2 class="contact-method__title">Facebook</h2>
 					<p class="contact-method__description">
@@ -740,7 +477,12 @@
 					</div>
 					<div class="location__address">
 						<h2 class="address__title">FIND US</h2>
-						<p class="address__text">Visit us in store for the full experience</p>
+						<p class="address__text">Visit us in one of our stores for the full experience</p>
+						<p>Our current stores:</p>
+						<ul id="storeList">
+							<li>Witbank</li>
+							<li>Dullstroom</li>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -757,7 +499,7 @@
 					</p>
 					<div class="error-actions">
 						<a href="#homePage" class="error-button ">Go Home</a>
-						<a href="#labPage" class="error-button error-button--outline">Visit Lab</a>
+						<a href="#theBudBarPage" class="error-button error-button--outline">Visit Lab</a>
 					</div>
 				</div>
 				<div class="error-decoration">
@@ -765,8 +507,83 @@
 				</div>
 			</div>
 
+			<!-- User Authentication Section with Separate Login and Registration -->
+			<div id="userAuthenticationPage" class="user-auth-page hidden">
+			<div class="auth-container">
+				<div class="auth-tabs">
+				<button id="loginTab" class="auth-tab active-tab">Login</button>
+				<button id="registerTab" class="auth-tab">Register</button>
+				</div>
+
+				<!-- Login Form -->
+				<div id="loginFormContainer" class="auth-form-container">
+				<h1 class="auth-title">Member Login</h1>
+				<form id="loginForm" class="auth-form">
+					<div class="form-group">
+					<label for="loginEmail" class="form-label">Email</label>
+					<input type="email" id="loginEmail" name="loginEmail" class="form-control" placeholder="Enter your email" required>
+					</div>
+					<div class="form-group">
+					<label for="cpdNumber" class="form-label">CP / CPD Number</label>
+					<input type="text" id="cpdNumber" name="cpdNumber" class="form-control" placeholder="Enter your CP/CPD number" required>
+					</div>
+					<div class="form-group">
+					<label for="loginPassword" class="form-label">Password</label>
+					<input type="password" id="loginPassword" name="loginPassword" class="form-control" placeholder="Enter your password" required>
+					</div>
+					<button type="submit" class="btn btn-primary auth-btn">Login</button>
+				</form>
+				<div class="auth-links">
+					<a href="#" class="forgot-password">Forgot Password?</a>
+				</div>
+				</div>
+
+				<!-- Registration Form -->
+				<div id="registerFormContainer" class="auth-form-container hidden">
+				<h1 class="auth-title">Member Registration</h1>
+				
+				<form id="registerForm" class="auth-form">
+					<div class="form-group">
+					<label for="UserIdNumber" class="form-label">ID Number</label>
+					<input type="text" id="UserIdNumber" name="userIdNumber" class="form-control" placeholder="Enter your ID number" required>
+					</div>
+					<div class="form-group">
+					<label for="firstName" class="form-label">First Name</label>
+					<input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter your first name" required>
+					</div>
+					<div class="form-group">
+					<label for="surname" class="form-label">Surname</label>
+					<input type="text" id="surname" name="surname" class="form-control" placeholder="Enter your surname" required>
+					</div>
+					<div class="form-group">
+					<label for="registerEmail" class="form-label">Email</label>
+					<input type="email" id="registerEmail" name="registerEmail" class="form-control" placeholder="Enter your email" required>
+					</div>
+					<div class="form-group">
+					<label for="residentialAddress" class="form-label">Residential Address</label>
+					<textarea id="residentialAddress" name="residentialAddress" class="form-control" placeholder="Enter your address" required></textarea>
+					</div>
+					<div class="form-group">
+					<label for="phone" class="form-label">Phone Number</label>
+					<input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required>
+					</div>
+					<div class="form-group">
+					<label for="registerPassword" class="form-label">Password</label>
+					<input type="password" id="registerPassword" name="registerPassword" class="form-control" placeholder="Enter your password" required>
+					 <div class="password-strength-meter">
+						<div class="strength-bar"></div>
+						</div>
+						<div class="password-requirements"></div>
+						<div class="error-message"></div>
+				</div>
+					<button type="submit" class="btn btn-primary auth-btn">Register</button>
+				</form>
+				</div>
+			</div>
+			</div>
+
 		</main>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-		<script src="./assets/js/script.js"></script>
+		<script defer src="./assets/js/script.js"></script>
 	</body>
 </html>

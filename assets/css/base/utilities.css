@@ -1,0 +1,236 @@
+/* _utilities.css */
+
+/* Display & Visibility */
+.hidden {
+    display: none !important;
+}
+
+.invisible {
+    visibility: hidden !important;
+}
+
+.visible {
+    visibility: visible !important;
+}
+
+/* Flex Utilities */
+.flex {
+    display: flex !important;
+}
+
+.flex-col {
+    flex-direction: column !important;
+}
+
+.flex-center {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.items-center {
+    align-items: center !important;
+}
+
+.justify-between {
+    justify-content: space-between !important;
+}
+
+.flex-wrap {
+    flex-wrap: wrap !important;
+}
+
+/* Grid Utilities */
+.grid {
+    display: grid !important;
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+}
+
+/* Spacing */
+.m-0 { margin: 0 !important; }
+.p-0 { padding: 0 !important; }
+
+.gap-1 { gap: var(--space-1) !important; }
+.gap-2 { gap: var(--space-2) !important; }
+.gap-4 { gap: var(--space-4) !important; }
+
+/* Glass Effects */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.glass-hover {
+    transition: all var(--transition-normal);
+}
+
+.glass-hover:hover {
+    background: rgba(14, 31, 17, 0.95);
+    transform: translateY(-2px);
+}
+
+/* Text Utilities */
+.text-center {
+    text-align: center !important;
+}
+
+.text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Animation Utilities */
+.fade-in {
+    animation: fadeIn var(--transition-normal);
+}
+
+.slide-in {
+    animation: slideIn var(--transition-normal);
+}
+
+.bounce {
+    animation: bounce var(--transition-bounce);
+}
+
+/* Position Utilities */
+.relative {
+    position: relative !important;
+}
+
+.absolute {
+    position: absolute !important;
+}
+
+.fixed {
+    position: fixed !important;
+}
+
+.sticky {
+    position: sticky !important;
+}
+
+/* Size Utilities */
+.w-full {
+    width: 100% !important;
+}
+
+.h-full {
+    height: 100% !important;
+}
+
+.h-auto {
+    height: auto !important;
+}
+
+.max-w-content {
+    max-width: var(--max-width) !important;
+}
+
+/* Border & Shadow */
+.rounded-sm { border-radius: var(--radius-sm) !important; }
+.rounded-md { border-radius: var(--radius-md) !important; }
+.rounded-lg { border-radius: var(--radius-lg) !important; }
+
+.shadow-sm { box-shadow: var(--shadow-sm) !important; }
+.shadow-md { box-shadow: var(--shadow-md) !important; }
+.shadow-lg { box-shadow: var(--shadow-lg) !important; }
+
+/* Z-index */
+.z-header { z-index: var(--z-header) !important; }
+.z-overlay { z-index: var(--z-overlay) !important; }
+.z-modal { z-index: var(--z-modal) !important; }
+
+/* Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive Utilities */
+@media (max-width: 640px) {
+    .mobile-hidden {
+        display: none !important;
+    }
+    
+    .mobile-block {
+        display: block !important;
+    }
+    
+    .mobile-flex-col {
+        flex-direction: column !important;
+    }
+}
+
+/* Add to _utilities.css */
+.hidden {
+    display: none !important;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.menu-active {
+    display: block !important;
+    opacity: 1;
+    transform: translateY(60px);
+    transition: all var(--transition-normal);
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+    min-height: 1.25rem;
+}
+
+.form-control.invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.form-control.invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
